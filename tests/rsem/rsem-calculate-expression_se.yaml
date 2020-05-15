@@ -1,0 +1,9 @@
+input_fastq:
+  - class: File
+    path:
+rsem_index_dir:
+  - class: Directory
+    path:
+rsem_index_prefix:
+rsem_output_prefix:
+nthreads: 8 

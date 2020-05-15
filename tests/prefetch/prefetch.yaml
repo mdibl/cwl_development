@@ -1,0 +1,4 @@
+# SRA accession ID to be accessed by prefetch
+accession: "SRR1013512"
+# Transport protocol to use 'fasp', 'http', or 'both'
+transport: "both"

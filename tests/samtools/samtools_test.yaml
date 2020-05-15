@@ -1,0 +1,3 @@
+bam:
+  - class: File
+    path: "/data/scratch/nmaki/cwl_testing/0AB1_S1_LALL.star2.Aligned.out.sorted.bam"

@@ -1,0 +1,5 @@
+reference_fasta:
+  class: File
+  path: "/data/scratch/reference/ensembl/release-93/danio_rerio-genome/danio_rerio.genome.fa"
+
+index_basename: "danio_rerio_test"

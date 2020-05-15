@@ -1,0 +1,3 @@
+read_motifs:
+  - class: File
+    path: "/Users/nmaki/Documents/GitHub/biocore_analysis/aux_scripts/PWMS_list2.txt"

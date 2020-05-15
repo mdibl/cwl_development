@@ -1,0 +1,12 @@
+end_mode: SE
+illuminaclip: 2:30:15
+input_read1_fastq_file:
+    class: File
+    path: "/data/internal/JimCoffman/jcoffman_006.abOnly_cortisol_2018/0AB1_S1_LALL_R1_001.fastq.gz"
+input_adapters_file:
+    class: File
+    path: "/opt/software/external/ggr-cwl/GGR-cwl-v1.0.0/v1.0/default_adapters_fromfastqc_30aug2018.fa"
+nthreads: 8
+sjdbOverhang: 100
+trimmomatic_jar_path: "/opt/software/external/trimmomatic/trimmomatic/trimmomatic-0.38.jar"
+trimmomatic_java_opts: "-Xms1000m -Xmx1000m"

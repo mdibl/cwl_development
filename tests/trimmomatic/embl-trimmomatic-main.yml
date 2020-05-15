@@ -1,0 +1,18 @@
+end_mode: PE 
+phred: '33'
+headcrop: 1
+minlen: 5
+leading: 1
+trailing: 1
+slidingwindow: 
+    windowSize: 10
+    requiredQuality: 15
+reads1:
+    class: File
+    format: 'edam:format_1930'
+    path: "/Users/nmaki/Desktop/local_cwl_testing/by4741ipa1d1rep1samp4_R1_001.fastq"
+reads2:
+    class: File
+    format: 'edam:format_1930'
+    path: "/Users/nmaki/Desktop/local_cwl_testing/by4741ipa1d1rep1samp4_R2_001.fastq"
+threads: 4

@@ -1,0 +1,3 @@
+sra_file:
+  class: File
+  path: "/data/scratch/nmaki/cwl_testing/prefetch_test/SRR1013512.sra"

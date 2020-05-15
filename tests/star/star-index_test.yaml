@@ -1,0 +1,7 @@
+genomeFastaFiles:
+  - class: File
+    path: "/data/scratch/reference/ensembl/release-93/danio_rerio-genome/danio_rerio.genome.fa"
+sjdbGTFfile:
+  class: File
+  path: "/data/external/ensembl/release-93/danio_rerio/gtf/Danio_rerio.GRCz11.93.gtf.gz"
+nthreads: 8
