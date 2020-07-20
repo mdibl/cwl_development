@@ -1,7 +1,0 @@
-genomeDir:
-  class: Directory
-  path: "/data/transformed/STAR-2.6.1b/ensembl/release-93/danio_rerio-genome"
-fq:
-  - class: File
-    path: "/data/internal/JimCoffman/jcoffman_006.abOnly_cortisol_2018/0AB1_S1_LALL_R1_001.fastq.gz"
-nthreads: 8

@@ -1,7 +1,0 @@
-gtf:
-  - class: File
-    path:
-reference_fasta_dir:
-  - class: Directory
-    path:
-reference_name:
