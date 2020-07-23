@@ -10,7 +10,8 @@ The general structure (subject to change) may be defined as the following:
     * tool-name (must mimic tool as called on the CLI)
       * version(?)
         * cwl code
-        * yaml configuration file
+        * configuration dir
+          * yaml configuration file
   * workflow
     * workflow-type
       * workflow-sub-type
