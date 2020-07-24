@@ -1,0 +1,35 @@
+# fastqc input parameters
+seqfile:
+  - class: File
+    path: "/compbio/data/test_fastq/KO_cort1.fastq"
+
+default_adapters_file:
+  - class: File
+    path: "/compbio/reference/auxiliary/default_adapters_fromfastqc_30aug2018.fa"
+
+nthreads: 8
+
+# trim_galore input parameters
+fastq1:
+    class: File
+    path: "/compbio/data/test_fastq/KO_cort1.fastq"
+
+adapter1: illumina
+
+# For ease of use, I've added parameters for paired end here as well, commented out
+# To use, remove comment and populate path: with valid location of secondary read file
+
+#fastq2:
+#    class: File
+#    path: ""
+
+#adapter2: illumina
+
+# kallisto-quant_se parameters
+index_file:
+  class: File
+  path: "/compbio/transformed/kallisto_linux-v0.46.2/ensembl/release-100/danio_rerio-transcriptome_joined/kallisto-ensembl-transcriptome_joined.idx"
+
+#fq:
+#  - class: File
+#    path: "/compbio/analysis/nmaki/workflow-test/KO_cort1_trimmed.fq"

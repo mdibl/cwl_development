@@ -1,0 +1,9 @@
+seqfile:
+  - class: File
+    path: "/compbio/data/test_fastq/KO_cort1.fastq"
+
+default_adapters_file:
+  - class: File
+    path: "/compbio/reference/auxiliary/default_adapters_fromfastqc_30aug2018.fa"
+    
+nthreads: 8
