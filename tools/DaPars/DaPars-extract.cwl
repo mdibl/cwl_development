@@ -39,12 +39,16 @@ inputs:
     inputBinding:
       position: 3
       prefix: -o
+
+  output_prefix:
+    label: "Prefix to add to output file"
+    type: string
   
 outputs:
   DaPars-extract_result:
     type: File
     outputBinding:
-      glob: $("Annotated_3UTR".output_file)
+      glob: $(inputs.output_prefix)
   console_log:
     type: stdout
   error_log:
