@@ -11,6 +11,9 @@ doc: >
      Given the annotated gene model, DaPars can infer the de novo proximal APA sites as well as the long and short 
      3’UTR expression levels. Finally, the dynamic APA usages between two conditions will be identified."
 
+requirements:
+  - class: InlineJavascriptRequirement
+
 hints:
   DockerRequirement:
     dockerImageId: DaPars:latest
@@ -39,16 +42,12 @@ inputs:
     inputBinding:
       position: 3
       prefix: -o
-
-  output_prefix:
-    label: "Prefix to add to output file"
-    type: string
   
 outputs:
   DaPars-extract_result:
     type: File
     outputBinding:
-      glob: dapars_test_configure.txt
+      glob: $(inputs.output_file)
   console_log:
     type: stdout
   error_log:

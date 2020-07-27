@@ -9,5 +9,3 @@ gene_symbol_file:
 output_file:
   class: File
   path: "/home/acguser/biocore_pipeline-docker-tools/dapars/testdata/hg19_refseq_extracted_3UTR.bed"
-
-output_prefix: "Annotated_3UTR"
