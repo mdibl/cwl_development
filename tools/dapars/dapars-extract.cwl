@@ -18,7 +18,7 @@ hints:
   DockerRequirement:
     dockerImageId: dapars:latest
 
-baseCommand: [python, /home/acguser/DaPars_Extract_Anno.py]
+baseCommand: [python, /home/acguser/dapars/DaPars_Extract_Anno.py]
 
 inputs:
   gene_bed_file:
