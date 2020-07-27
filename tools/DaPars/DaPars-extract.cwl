@@ -44,7 +44,7 @@ inputs:
       prefix: -o
   
 outputs:
-  DaPars-extract_result:
+  dapars-extract_result:
     type: File
     outputBinding:
       glob: $(inputs.output_prefix)
@@ -53,5 +53,5 @@ outputs:
   error_log:
     type: stderr
 
-stdout: "DaPars-extract_console.txt"
-stderr: "DaPars-extract_error.txt"
+stdout: "dapars-extract_console.txt"
+stderr: "dapars-extract_error.txt"
