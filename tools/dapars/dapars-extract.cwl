@@ -12,9 +12,10 @@ doc: >
      3’UTR expression levels. Finally, the dynamic APA usages between two conditions will be identified."
 
 requirements:
+  InlineJavascriptRequirement: {}
   InitialWorkDirRequirement:
     listing:
-      - $(inputs.src)
+      - $(inputs.dapars_config)
 
 
 hints:
@@ -24,6 +25,9 @@ hints:
 baseCommand: [DaPars_Extract_Anno]
 
 inputs:
+  dapars_config:
+    type: Directory
+
   gene_bed_file:
     label: "The gene model in BED format, can be downloaded from UCSC"
     type: File
