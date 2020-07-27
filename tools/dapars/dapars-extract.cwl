@@ -13,9 +13,9 @@ doc: >
 
 requirements:
   InlineJavascriptRequirement: {}
-  InitialWorkDirRequirement:
-    listing:
-      - $(inputs.dapars_config)
+  #InitialWorkDirRequirement:
+   # listing:
+    #  - $(inputs.dapars_config)
 
 
 hints:
@@ -25,8 +25,8 @@ hints:
 baseCommand: [DaPars_Extract_Anno]
 
 inputs:
-  dapars_config:
-    type: Directory
+  #dapars_config:
+  #  type: Directory
 
   gene_bed_file:
     label: "The gene model in BED format, can be downloaded from UCSC"
