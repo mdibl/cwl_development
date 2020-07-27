@@ -44,7 +44,7 @@ outputs:
   DaPars-extract_result:
     type: File
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: "*"
   console_log:
     type: stdout
   error_log:
