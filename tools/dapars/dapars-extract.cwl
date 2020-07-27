@@ -16,7 +16,7 @@ requirements:
 
 hints:
   DockerRequirement:
-    dockerImageId: DaPars:latest
+    dockerImageId: dapars:latest
 
 baseCommand: [python, /home/acguser/DaPars_Extract_Anno.py]
 
