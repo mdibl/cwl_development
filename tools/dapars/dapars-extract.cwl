@@ -45,9 +45,11 @@ inputs:
   
 outputs:
   dapars-extract_result:
-    type: File
+    type:
+      type: array
+      items: File
     outputBinding:
-      glob: "*.bed"
+      glob: "*"
   console_log:
     type: stdout
   error_log:
