@@ -47,7 +47,7 @@ outputs:
   dapars-extract_result:
     type: File
     outputBinding:
-      glob: $(inputs.output_prefix)
+      glob: "*.bed"
   console_log:
     type: stdout
   error_log:
