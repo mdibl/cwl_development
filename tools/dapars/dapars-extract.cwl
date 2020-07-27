@@ -12,8 +12,10 @@ doc: >
      3’UTR expression levels. Finally, the dynamic APA usages between two conditions will be identified."
 
 requirements:
-  - class: InlineJavascriptRequirement
-  - class: InitialWorkDirRequirement
+  InitialWorkDirRequirement:
+    listing:
+      - $(inputs.src)
+
 
 hints:
   DockerRequirement:
