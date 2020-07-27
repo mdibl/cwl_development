@@ -33,9 +33,9 @@ inputs:
       position: 2
       prefix: -s
   
-  output_prefix:
+  output_file:
     label: "The output of the extracted annotation region will be used in the following configure file after “Annotated_3UTR”"
-    type: string
+    type: File
     inputBinding:
       position: 3
       prefix: -o

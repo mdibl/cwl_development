@@ -1,0 +1,11 @@
+gene_bed_file:
+  class: File
+  path: "/home/acguser/biocore_pipeline-docker-tools/dapars/testdata/hg19_refseq_whole_gene.bed"
+
+gene_symbol_file:
+  class: File
+  path: "/home/acguser/biocore_pipeline-docker-tools/dapars/testdata/hg19_4_19_2012_Refseq_id_from_UCSC.txt"
+
+output_file:
+  class: File
+  path: "/home/acguser/biocore_pipeline-docker-tools/dapars/testdata/hg19_refseq_extracted_3UTR.bed"
