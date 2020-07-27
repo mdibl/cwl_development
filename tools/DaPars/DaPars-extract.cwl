@@ -44,7 +44,7 @@ outputs:
   DaPars-extract_result:
     type: File
     outputBinding:
-      glob: "*"
+      glob: "Annotated_3UTR"
   console_log:
     type: stdout
   error_log:
