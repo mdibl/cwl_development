@@ -13,6 +13,7 @@ doc: >
 
 requirements:
   - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
 
 hints:
   DockerRequirement:
@@ -47,7 +48,7 @@ outputs:
   dapars-extract_result:
     type:
       type: array
-      items: File
+      items: [ File, Directory ]
     outputBinding:
       glob: "*"
   console_log:
