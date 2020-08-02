@@ -10,6 +10,6 @@ output_file:
   class: File
   path: "/home/acguser/biocore_pipeline-docker-tools/dapars/testdata/hg19_refseq_extracted_3UTR.bed"
 
-#dapars_config:
-#  class: Directory
-#  path: "/home/nmaki/dapars-test"
+working_directory:
+  class: Directory
+  path: "./"

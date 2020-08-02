@@ -1,4 +1,4 @@
-cwlVersion: v1.0
+cwlVersion: v1.2.0-dev4
 class: CommandLineTool
 label: "Given the annotated gene model, DaPars can infer the de novo proximal APA sites as well as the long and short 
      3’UTR expression levels"
@@ -12,21 +12,26 @@ doc: >
      3’UTR expression levels. Finally, the dynamic APA usages between two conditions will be identified."
 
 requirements:
-  InlineJavascriptRequirement: {}
-  #InitialWorkDirRequirement:
-   # listing:
-    #  - $(inputs.dapars_config)
-
-
-hints:
   DockerRequirement:
     dockerImageId: dapars:0.9.1
+    dockerOutputDirectory: /output
+  InlineJavascriptRequirement: {}
+  InitialWorkDirRequirement: 
+    listing:
+      - entry: $(inputs.working_directory)
+        entryname: $("/working_directory")
+      #- entryname: gene_bed_file
+        #entry: $(inputs.gene_bed_file)
+      #- entryname: gene_symbol_file
+        #entry: $(inputs.gene_symbol_file)
+      #- entryname: output_file
+        #entry: $(inputs.output_file)
 
 baseCommand: [DaPars_Extract_Anno]
 
 inputs:
-  #dapars_config:
-  #  type: Directory
+  working_directory:
+    type: Directory
 
   gene_bed_file:
     label: "The gene model in BED format, can be downloaded from UCSC"
@@ -56,7 +61,7 @@ outputs:
       type: array
       items: [ File, Directory ]
     outputBinding:
-      glob: "*"
+      glob: "configuration_file.bed"
   console_log:
     type: stdout
   error_log:
