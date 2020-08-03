@@ -14,19 +14,19 @@ doc: >
 requirements:
   DockerRequirement:
     dockerImageId: dapars:0.9.1
-    dockerOutputDirectory: /working_directory
+    #dockerOutputDirectory: /working_directory
   InlineJavascriptRequirement: {} 
-  InitialWorkDirRequirement:
-    listing:
-    - entry: $(inputs.working_directory)
-      writable: true
-      entryname: $("/working_directory")
+  #InitialWorkDirRequirement:
+   # listing:
+    #- entry: $(inputs.working_directory)
+     # writable: true
+      #entryname: $("/working_directory")
 
 baseCommand: [DaPars_Extract_Anno]
 
 inputs:
-  working_directory:
-    type: Directory
+  #working_directory:
+   # type: Directory
 
   gene_bed_file:
     label: "The gene model in BED format, can be downloaded from UCSC"
@@ -44,19 +44,17 @@ inputs:
       prefix: -s
   
   output_file:
-    label: "The output of the extracted annotation region will be used in the following configure file after “Annotated_3UTR”"
-    type: File
+    label: "The output prefix of the extracted annotation region will be used in the following configure file after “Annotated_3UTR”"
+    type: string
     inputBinding:
       position: 3
       prefix: -o
   
 outputs:
   dapars-extract_result:
-    type:
-      type: array
-      items: [ File, Directory ]
+    type: File
     outputBinding:
-      glob: "configuration.bed"
+      glob: $(inputs.output_file)
   console_log:
     type: stdout
   error_log:
