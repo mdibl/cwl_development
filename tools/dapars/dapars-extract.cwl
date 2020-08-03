@@ -15,17 +15,12 @@ requirements:
   DockerRequirement:
     dockerImageId: dapars:0.9.1
     dockerOutputDirectory: /output
-  InlineJavascriptRequirement: {}
-  InitialWorkDirRequirement: 
+  InlineJavascriptRequirement: {} 
+  InitialWorkDirRequirement:
     listing:
       - entry: $(inputs.working_directory)
+        writable: true
         entryname: $("/working_directory")
-      #- entryname: gene_bed_file
-        #entry: $(inputs.gene_bed_file)
-      #- entryname: gene_symbol_file
-        #entry: $(inputs.gene_symbol_file)
-      #- entryname: output_file
-        #entry: $(inputs.output_file)
 
 baseCommand: [DaPars_Extract_Anno]
 
@@ -61,7 +56,7 @@ outputs:
       type: array
       items: [ File, Directory ]
     outputBinding:
-      glob: "configuration_file.bed"
+      glob: "configuration.bed"
   console_log:
     type: stdout
   error_log:
