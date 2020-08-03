@@ -14,13 +14,13 @@ doc: >
 requirements:
   DockerRequirement:
     dockerImageId: dapars:0.9.1
-    dockerOutputDirectory: /output
+    dockerOutputDirectory: /working_directory
   InlineJavascriptRequirement: {} 
   InitialWorkDirRequirement:
     listing:
-      - entry: $(inputs.working_directory)
-        writable: true
-        entryname: $("/working_directory")
+    - entry: $(inputs.working_directory)
+      writable: true
+      entryname: $("/working_directory")
 
 baseCommand: [DaPars_Extract_Anno]
 
