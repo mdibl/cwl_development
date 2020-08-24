@@ -132,32 +132,38 @@ inputs:
     type: Directory?
     inputBinding:
       prefix: --dir
+  output_prefix:
+    label: "prefix to be added to output files"
+    doc: "creates a tag to be added to output file names"
+    type: string?
+    default: ""
+    inputBinding: null
 
 outputs:
   fastqc_result:
     type: File[]
     outputBinding:
       glob: "*_fastqc.zip"
-  #console_log:
-  #  type: stdout
-  #error_log:
-  #  type: stderr
+  console_log:
+    type: stdout
+  error_log:
+    type: stderr
 
-#stdout: $(inputs.seqfile[0].nameroot + "_fastqc_console.txt")
-#stderr: $(inputs.seqfile[0].nameroot + "_fastqc_error.txt")
+stdout: output_prefix.fastqc_console.txt
+stderr: output_prefix.fastqc_error.txt
 
-#$namespaces:
-#  s: https://schema.org/
-#  edam: http://edamontology.org/
-#s:copyrightHolder: "MDI Biological Laboratory, 2020"
-#s:license: "https://www.apache.org/licenses/LICENSE-2.0"
-#s:codeRepository: https://github.com/mdibl/biocore_analysis
-#s:author:
-#  - class: s:Person
-#    s:identifier: https://orcid.org/0000-0001-9120-8365
-#    s:email: mailto:nmaki@mdibl.org
-#    s:name: Nathaniel Maki
+$namespaces:
+  s: https://schema.org/
+  edam: http://edamontology.org/
+s:copyrightHolder: "MDI Biological Laboratory, 2020"
+s:license: "https://www.apache.org/licenses/LICENSE-2.0"
+s:codeRepository: https://github.com/mdibl/biocore_analysis
+s:author:
+  - class: s:Person
+    s:identifier: https://orcid.org/0000-0001-9120-8365
+    s:email: mailto:nmaki@mdibl.org
+    s:name: Nathaniel Maki
 
-#$schemas:
-#  - https://schema.org/docs/schemas.html
-#  - http://edamontology.org/EDAM.owl
+$schemas:
+  - https://schema.org/version/latest/schema.rdf
+  - http://edamontology.org/EDAM.owl
