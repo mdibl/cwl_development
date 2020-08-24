@@ -38,21 +38,20 @@ inputs:
     label: 'maximum memory allocated'
     doc: >
       "Suggested max memory to use by Trinity where limiting can be enabled.
-      (jellyfish, sorting, etc) provided in Gb of RAM, ie. --max_memory 50G"
-  - id: single_reads
+      (jellyfish, sorting, etc) provided in Gb of RAM, ie. --max_memory 10G"
+  - id: samples_file
     type: File
     inputBinding:
-      position: 5
-      prefix: '--single'
-      itemSeparator: ","
-    label: 'Single read(s)'
+      position: 4
+      prefix: '--samples_file'
+    label: 'text file containing samples'
     doc: >
-      "single reads, one or more file names, comma-delimited
-      (note, if single file contains pairs, can use flag: --run_as_paired)"
+      "tab-delimited file, indicates biological replicate relationships"
+  ##TODO add input for directory of read files, otherwise using samples_file will not work
   - id: trinity_ss_lib_type
     type: string
     inputBinding:
-      position: 6
+      position: 7
       prefix: '--SS_lib_type'
     label: 'Strand-specific RNA-Seq read orientation'
     doc: >
@@ -62,7 +61,7 @@ inputs:
     type: int?
     default: 8
     inputBinding:
-      position: 7
+      position: 8
       prefix: '--CPU'
     label: 'number of CPUs allocated'
     doc: >
@@ -70,13 +69,13 @@ inputs:
   - id: no_normalize_reads
     type: boolean?
     inputBinding:
-      position: 8
+      position: 9
       prefix: '--no_normalize_reads'
     label: 'Do *not* run in silico normalization of reads. default: normalize reads'
   - id: normalize_by_read_set
     type: boolean?
     inputBinding:
-      position: 9
+      position: 10
       prefix: '--normalize_by_read_set'
     label: 'Run normalization separate for each pair of fastq files'
 
@@ -108,13 +107,8 @@ arguments:
     valueFrom: $(runtime.outdir)/trinity_out_dir/
 
 hints:
-  - class: SoftwareRequirement
-    packages:
-      Trinity:
-        version:
-          - 2.8.5
   - class: DockerRequirement
-    dockerPull: 'trinityrnaseq/trinityrnaseq:2.8.5'
+    dockerPull: trinityrnaseq/trinityrnaseq
 
 $schemas:
   - 'http://edamontology.org/EDAM_1.16.owl'
@@ -122,3 +116,5 @@ $schemas:
 s:license: "https://www.apache.org/licenses/LICENSE-2.0"
 s:copyrightHolder: "EMBL - European Bioinformatics Institute, 2018"
 s:author: "Arnaud Meng, Maxim Scheremetjew"
+s:modified_by: "MDI Biological Laboratory, 2019"
+s:mod_author: "Nathaniel Maki"

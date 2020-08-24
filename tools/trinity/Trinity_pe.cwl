@@ -39,15 +39,24 @@ inputs:
     doc: >
       "Suggested max memory to use by Trinity where limiting can be enabled.
       (jellyfish, sorting, etc) provided in Gb of RAM, ie. --max_memory 10G"
-  - id: samples_file
+  - id: left_reads
     type: File
     inputBinding:
       position: 4
-      prefix: '--samples_file'
-    label: 'text file containing samples'
+      prefix: '--left'
+      itemSeparator: ","
+    label: 'left read(s)'
     doc: >
-      "tab-delimited file, indicates biological replicate relationships"
-  ##TODO add input for directory of read files, otherwise using samples_file will not work
+      "left reads, one or more file names (separated by commas, no spaces)"
+  - id: right_reads
+    type: File
+    inputBinding:
+      position: 5
+      prefix: '--right'
+      itemSeparator: ","
+    label: 'right read(s)'
+    doc: >
+      "right reads, one or more file names (separated by commas, no spaces)"
   - id: trinity_ss_lib_type
     type: string
     inputBinding:
@@ -107,13 +116,8 @@ arguments:
     valueFrom: $(runtime.outdir)/trinity_out_dir/
 
 hints:
-  - class: SoftwareRequirement
-    packages:
-      Trinity:
-        version:
-          - 2.8.5
   - class: DockerRequirement
-    dockerPull: 'trinityrnaseq/trinityrnaseq:2.8.5'
+    dockerPull: trinityrnaseq/trinityrnaseq
 
 $schemas:
   - 'http://edamontology.org/EDAM_1.16.owl'
@@ -121,5 +125,3 @@ $schemas:
 s:license: "https://www.apache.org/licenses/LICENSE-2.0"
 s:copyrightHolder: "EMBL - European Bioinformatics Institute, 2018"
 s:author: "Arnaud Meng, Maxim Scheremetjew"
-s:modified_by: "MDI Biological Laboratory, 2019"
-s:mod_author: "Nathaniel Maki"
