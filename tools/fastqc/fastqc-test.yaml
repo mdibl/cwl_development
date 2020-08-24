@@ -5,5 +5,6 @@ seqfile:
 default_adapters_file:
   - class: File
     path: "/compbio/reference/auxiliary/default_adapters_fromfastqc_30aug2018.fa"
-    
+
+ver: 0.11.7
 nthreads: 8

@@ -8,18 +8,24 @@ doc: >
 
 hints:
   DockerRequirement:
-    dockerPull: quay.io/biocontainers/fastqc:0.11.7--pl5.22.0_2
+    dockerPull: biocontainers/fastqc:$fastqc_ver
 
 requirements:
   - class: InlineJavascriptRequirement
+  - class: EnvVarRequirement:
+    fastqc_ver:
+      FASTQC: $(inputs.ver)
 
-baseCommand: [fastqc]
+
+baseCommand: [ fastqc ]
 
 arguments:
   - prefix: --outdir
     valueFrom: $(runtime.outdir)
 
 inputs:
+  ver: string, int, float
+
   seqfile:
     label: "a set of sequence files"
     doc: "a set of sequence files"
