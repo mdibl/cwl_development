@@ -8,14 +8,10 @@ doc: >
 
 hints:
   DockerRequirement:
-    dockerPull: biocontainers/fastqc:$fastqc_ver
+    dockerPull: biocontainers/fastqc:v0.11.9_cv6
 
 requirements:
   - class: InlineJavascriptRequirement
-  - class: EnvVarRequirement:
-    fastqc_ver:
-      FASTQC: $(inputs.ver)
-
 
 baseCommand: [ fastqc ]
 
@@ -24,8 +20,6 @@ arguments:
     valueFrom: $(runtime.outdir)
 
 inputs:
-  ver: string, int, float
-
   seqfile:
     label: "a set of sequence files"
     doc: "a set of sequence files"
@@ -158,18 +152,18 @@ outputs:
 stdout: output_prefix.fastqc_console.txt
 stderr: output_prefix.fastqc_error.txt
 
-$namespaces:
-  s: https://schema.org/
-  edam: http://edamontology.org/
-s:copyrightHolder: "MDI Biological Laboratory, 2020"
-s:license: "https://www.apache.org/licenses/LICENSE-2.0"
-s:codeRepository: https://github.com/mdibl/biocore_analysis
-s:author:
-  - class: s:Person
-    s:identifier: https://orcid.org/0000-0001-9120-8365
-    s:email: mailto:nmaki@mdibl.org
-    s:name: Nathaniel Maki
+#$namespaces:
+  #s: https://schema.org/
+  #edam: http://edamontology.org/
+#s:copyrightHolder: "MDI Biological Laboratory, 2020"
+#s:license: "https://www.apache.org/licenses/LICENSE-2.0"
+#s:codeRepository: https://github.com/mdibl/biocore_analysis
+#s:author:
+  #- class: s:Person
+    #s:identifier: https://orcid.org/0000-0001-9120-8365
+    #s:email: mailto:nmaki@mdibl.org
+    #s:name: Nathaniel Maki
 
-$schemas:
-  - https://schema.org/version/latest/schema.rdf
-  - http://edamontology.org/EDAM.owl
+#$schemas:
+  #- https://schema.org/version/latest/schema.rdf
+  #- http://edamontology.org/EDAM.owl
