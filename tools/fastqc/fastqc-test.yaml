@@ -6,6 +6,6 @@ seqfile:
   #- class: File
     #path: "/compbio/reference/auxiliary/default_adapters_fromfastqc_30aug2018.fa"
 
-output_prefix: 0AB1_S1_LALL_R1_001
+output_prefix: jcoffman_006.1490192921.0AB1_S1_LALL_R1_001
 
 nthreads: 8

@@ -149,8 +149,8 @@ outputs:
   error_log:
     type: stderr
 
-stdout: output_prefix.fastqc_console.txt
-stderr: output_prefix.fastqc_error.txt
+stdout: $(inputs.output_prefix + ".fastqc.console.txt")
+stderr: $(inputs.output_prefix + ".fastqc.error.txt")
 
 #$namespaces:
   #s: https://schema.org/
