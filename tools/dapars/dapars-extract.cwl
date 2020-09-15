@@ -13,21 +13,14 @@ doc: >
 
 requirements:
   InlineJavascriptRequirement: {}
-  #InitialWorkDirRequirement:
-   # listing:
-    #  - $(inputs.dapars_config)
-
 
 hints:
   DockerRequirement:
     dockerImageId: dapars:0.9.1
 
-baseCommand: [DaPars_Extract_Anno]
+baseCommand: [ DaPars_Extract_Anno ]
 
 inputs:
-  #dapars_config:
-  #  type: Directory
-
   gene_bed_file:
     label: "The gene model in BED format, can be downloaded from UCSC"
     type: File
