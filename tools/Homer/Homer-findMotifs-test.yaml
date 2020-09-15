@@ -1,0 +1,11 @@
+input_list:
+  class: File
+  path: "/Users/nathanielmaki/Desktop/Homer/DESeq2CortOnlySigUpKlf9KO.txt"
+
+output_dir:
+  class: Directory
+  path: "/Users/nathanielmaki/Desktop/Homer/"
+
+motif_length: 8
+
+promoter_set: zebrafish

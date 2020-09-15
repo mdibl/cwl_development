@@ -12,6 +12,12 @@ doc: >
      3’UTR expression levels. Finally, the dynamic APA usages between two conditions will be identified."
 
 requirements:
+<<<<<<< HEAD
+=======
+  InlineJavascriptRequirement: {}
+
+hints:
+>>>>>>> development
   DockerRequirement:
     dockerImageId: dapars:0.9.1
     #dockerOutputDirectory: /working_directory
@@ -22,12 +28,15 @@ requirements:
      # writable: true
       #entryname: $("/working_directory")
 
-baseCommand: [DaPars_Extract_Anno]
+baseCommand: [ DaPars_Extract_Anno ]
 
 inputs:
+<<<<<<< HEAD
   #working_directory:
    # type: Directory
 
+=======
+>>>>>>> development
   gene_bed_file:
     label: "The gene model in BED format, can be downloaded from UCSC"
     type: File
