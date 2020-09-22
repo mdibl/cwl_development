@@ -85,6 +85,12 @@ inputs:
     inputBinding:
       prefix: --stringency 
       position: 1
+  output_prefix:
+    label: "prefix to be added to output files"
+    doc: "creates a tag to be added to output file names"
+    type: string?
+    default: ""
+    inputBinding: null
 
 arguments:
 
@@ -200,25 +206,10 @@ outputs:
       items: File # since one or two matches (single/paired end)
     outputBinding:
       glob: "*fastqc.zip"
-  #console_log:
-    #type: stdout
-  #error_log:
-    #type: stderr
+  console_log:
+    type: stdout
+  error_log:
+    type: stderr
 
-#stdout: $(inputs.fastq1.nameroot + "_trim_galore_console.txt")
-#stderr: $(inputs.fastq1.nameroot + "_trim_galore_error.txt")
-#$namespaces:
-#  s: https://schema.org/
-#  edam: http://edamontology.org/
-#s:copyrightHolder: "MDI Biological Laboratory, 2020"
-#s:license: "https://www.apache.org/licenses/LICENSE-2.0"
-#s:codeRepository: https://github.com/mdibl/biocore_analysis
-#s:author:
-#  - class: s:Person
-#    s:identifier: https://orcid.org/0000-0001-9120-8365
-#    s:email: mailto:nmaki@mdibl.org
-#    s:name: Nathaniel Maki
-
-#$schemas:
-#  - https://schema.org/docs/schemas.html
-#  - http://edamontology.org/EDAM.owl
+stdout: $(inputs.output_prefix + ".trim_galore.console.txt")
+stderr: $(inputs.output_prefix + ".trim_galore.error.txt")
