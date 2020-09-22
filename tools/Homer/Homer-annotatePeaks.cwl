@@ -16,3 +16,8 @@ hints:
 
 baseCommand: [ annotatePeaks.pl ]
 
+inputs:
+  tss_centric:
+    label: "for TSS specific analysis"
+    doc: "if tss is given as the first argument, above will occur.
+          Tag counts and motifs will be found relative to the TSS"
