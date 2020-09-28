@@ -158,4 +158,4 @@ requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
-    dockerPull: 'greatfireball/ime_transdecoder:5.5.0'
+    dockerPull: 'biocontainers/transdecoder:v5.0.1-2-deb_cv1'
