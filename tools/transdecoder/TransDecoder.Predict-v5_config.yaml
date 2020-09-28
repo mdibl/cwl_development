@@ -1,0 +1,14 @@
+transcriptsFile:  # type "File"
+    class: File
+    path: a/file/path
+train: 0  # type "int" (optional)
+singleBestOnly: false  # type "boolean" (optional)
+retainPfamHits: a_string  # type "string" (optional)
+retainLongOrfsMode: a_string  # type "string" (optional)
+retainLongOrfsLength: 0  # type "int" (optional)
+retainBlastpHits: a_string  # type "string" (optional)
+noRefineStarts: false  # type "boolean" (optional)
+longOpenReadingFrames:  # type "Directory"
+    class: Directory
+    path: a/directory/path
+geneticCode: genetic_codes_enum_value  # enum; valid values: "universal", "Euplotes", "Tetrahymena", "Candida", "Acetabularia", "Mitochondrial-Canonical", "Mitochondrial-Vertebrates", "Mitochondrial-Arthropods", "Mitochondrial-Echinoderms", "Mitochondrial-Molluscs", "Mitochondrial-Ascidians", "Mitochondrial-Nematodes", "Mitochondrial-Platyhelminths", "Mitochondrial-Yeasts", "Mitochondrial-Euascomycetes", "Mitochondrial-Protozoans" (optional)

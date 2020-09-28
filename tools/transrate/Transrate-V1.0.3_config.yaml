@@ -1,0 +1,11 @@
+log_level: a_string  # type "string" (optional)
+n_threads: 0  # type "int" (optional)
+right_fastq:  # type "File" (optional)
+    class: File
+    path: a/file/path
+left_fastq:  # type "File"
+    class: File
+    path: a/file/path
+in_fasta:  # type "File"
+    class: File
+    path: a/file/path

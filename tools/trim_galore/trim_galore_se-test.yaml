@@ -1,7 +1,0 @@
-fastq1:
-    class: File
-    path: "/compbio/data/test_fastq/KO_cort1.fastq"
-
-adapter1: illumina
-
-nthreads: 8
