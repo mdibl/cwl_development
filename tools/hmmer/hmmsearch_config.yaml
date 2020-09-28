@@ -1,0 +1,18 @@
+gff_flag:  # type "File" (optional)
+    class: File
+    path: a/file/path
+fasta_flag:  # type "File" (optional)
+    class: File
+    path: a/file/path
+query:  # type "File"
+    class: File
+    path: a/file/path
+db:  # type "File"
+    class: File
+    path: a/file/path
+Z: 10000  # default value of type "int".
+cpu: 8  # default value of type "int".
+cut_tc: true  # default value of type "boolean".
+domtblout: domtbl.out  # default value of type "string".
+noali: true  # default value of type "boolean".
+tblout: hmmsearch.out  # default value of type "string".

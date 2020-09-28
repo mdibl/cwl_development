@@ -1,17 +1,6 @@
 cwlVersion: v1.0
 class: CommandLineTool
 label: "Assesses genome assembly and annotation completeness with single-copy orthologs"
-doc: >
-    "BUSCO v3 provides quantitative measures for the assessment of genome assembly,
-  gene set, and transcriptome completeness, based on evolutionarily-informed expectations
-  of gene content from near-universal single-copy orthologs selected from OrthoDB v9.
-  BUSCO assessments are implemented in open-source software, with a large
-  selection of lineage-specific sets of Benchmarking Universal Single-Copy Orthologs. These
-  conserved orthologs are ideal candidates for large-scale phylogenomics studies, and the
-  annotated BUSCO gene models built during genome assessments provide a comprehensive gene
-  predictor training set for use as part of genome annotation pipelines."
-  
-    > "Please visit http://busco.ezlab.org/ for full documentation."
 
 hints:
   DockerRequirement:

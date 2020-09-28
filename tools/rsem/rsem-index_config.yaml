@@ -1,0 +1,7 @@
+reference_name: a_string  # type "string"
+reference_fasta_file:  # type "File"
+    class: File
+    path: a/file/path
+gtf:  # type "File"
+    class: File
+    path: a/file/path

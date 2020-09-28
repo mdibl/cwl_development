@@ -64,23 +64,3 @@ outputs:
 stdout: kallisto-index_console.txt
 stderr: kallisto-index_error.txt
 
-$namespaces:
-  s: https://schema.org/
-  edam: http://edamontology.org/
-s:copyrightHolder: "MDI Biological Laboratory, 2020"
-s:license: "https://www.apache.org/licenses/LICENSE-2.0"
-s:codeRepository: https://github.com/mdibl/biocore_analysis
-s:author:
-  - class: s:Person
-    s:identifier: https://orcid.org/0000-0003-3777-5945
-    s:email: mailto:inutano@gmail.com
-    s:name: Tazro Ohta
-s:author:
-  - class: s:Person
-    s:identifier: https://orcid.org/0000-0001-9120-8365
-    s:email: mailto:nmaki@mdibl.org
-    s:name: Nathaniel Maki
-
-$schemas:
-  - https://schema.org/docs/schema_org_rdfa.html
-  - http://edamontology.org/EDAM_1.18.owl

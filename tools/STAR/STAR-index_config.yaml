@@ -1,0 +1,8 @@
+sjdbOverhang: 100  # default value of type "int".
+sjdbGTFfile:  # type "File"
+    class: File
+    path: a/file/path
+nthreads: 8  # default value of type "int".
+genomeFastaFiles:  # array of type "File"
+  - class: File
+    path: a/file/path

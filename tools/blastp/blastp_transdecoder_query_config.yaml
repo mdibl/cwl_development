@@ -1,0 +1,14 @@
+out_flag: "blastp.outfmt6"  # default value of type "string".
+e_value: 0.1  # type "float"
+outfmt: 0  # type "int"
+max_target_seqs: 0  # type "int"
+num_threads: 0  # type "int"
+database:  # type "File"
+    class: File
+    path: a/file/path
+transdecoder_pep:  # type "File"
+    class: File
+    path: a/file/path
+blastdb_dir:  # type "Directory" (optional)
+    class: Directory
+    path: a/directory/path

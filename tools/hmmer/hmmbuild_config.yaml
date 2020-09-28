@@ -1,0 +1,6 @@
+msafile:  # type "File"
+    class: File
+    path: a/file/path
+hmmfile_out: a_string  # type "string"
+hand: false  # type "boolean" (optional)
+cpu: 0  # type "int" (optional)

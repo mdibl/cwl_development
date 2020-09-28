@@ -1,5 +1,0 @@
-reference_fasta:
-  - class: File
-    path: "/compbio/reference/ensembl/release-100/danio_rerio/genome/danio_rerio.genome.fa"
-
-index_basename: "hisat2-ensembl-dna"

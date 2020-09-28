@@ -1,0 +1,4 @@
+reference_fasta:  # array of type "File"
+  - class: File
+    path: a/file/path
+index_basename: a_string  # type "string"

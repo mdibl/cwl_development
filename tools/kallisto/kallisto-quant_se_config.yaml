@@ -1,0 +1,26 @@
+standard_deviation: 20  # default value of type "double". (optional)
+single_overhang: false  # type "boolean" (optional)
+seed: 42  # default value of type "int".
+rf_stranded: false  # type "boolean" (optional)
+pseudo_bam: false  # type "boolean" (optional)
+plain_text: false  # type "boolean" (optional)
+out_dir_name: "kallisto_quant"  # default value of type "string".
+nthreads: 8  # default value of type "int". (optional)
+index_file:  # type "File"
+    class: File
+    path: a/file/path
+gtf:  # type "File" (optional)
+    class: File
+    path: a/file/path
+genome_bam: false  # type "boolean" (optional)
+fusion: false  # type "boolean" (optional)
+fragment_length: 200  # default value of type "double". (optional)
+fr_stranded: false  # type "boolean" (optional)
+fq:  # type "File"
+    class: File
+    path: a/file/path
+chromosome:  # type "File" (optional)
+    class: File
+    path: a/file/path
+bootstrap_samples: 0  # type "int"
+bias: false  # type "boolean" (optional)

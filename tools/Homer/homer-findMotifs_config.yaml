@@ -1,0 +1,10 @@
+start: 0  # type "int" (optional)
+promoter_set: a_string  # type "string"
+output_dir:  # type "Directory"
+    class: Directory
+    path: a/directory/path
+motif_length: 0  # type "int"
+input_list:  # type "File"
+    class: File
+    path: a/file/path
+end: 0  # type "int" (optional)

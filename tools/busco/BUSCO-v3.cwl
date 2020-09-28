@@ -234,7 +234,7 @@ hints:
         version:
           - 3.0.2
   - class: DockerRequirement
-    dockerPull: 'comics/busco:3.0.2'
+    dockerPull: 'biocontainers/busco:4.0.6--pyr36_0'
   - class: gx:interface
     gx:inputs:
       - gx:name: blastSingleCore
