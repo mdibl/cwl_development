@@ -1,0 +1,10 @@
+#ss_lib_type: a_string  # type "string" (optional)
+seq_type: fq  # type "string"
+output_dir: trinityResults  # type "string"
+no_bowtie: false  # type "boolean" (optional)
+max_memory: 50G  # type "string"
+trimmomatic: true
+fq:  # type "File"
+    class: File
+    path: /data/scratch/nmaki/coffman_reduced/samples/reduced_all.fastq
+cpu: 8  # type "int" (optional)
