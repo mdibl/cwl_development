@@ -4,10 +4,9 @@ $namespaces:
   gx: "http://galaxyproject.org/cwl#"
   edam: 'http://edamontology.org/'
   s: 'http://schema.org/'
-baseCommand: [ /opt/software/external/transdecoder/TransDecoder/TransDecoder.LongOrfs ]
+baseCommand: [ TransDecoder.LongOrfs ]
 inputs:
-  - format: 'edam:format_3475'
-    id: geneToTranscriptMap
+  - id: geneToTranscriptMap
     type: File?
     inputBinding:
       position: 0
@@ -39,8 +38,7 @@ inputs:
       prefix: '-S'
     label: strand-specific
     doc: strand-specific (only analyzes top strand)
-  - format: 'edam:format_1929'
-    id: transcriptsFile
+  - id: transcriptsFile
     type: File
     inputBinding:
       position: 0
