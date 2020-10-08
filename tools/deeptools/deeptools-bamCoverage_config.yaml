@@ -1,0 +1,11 @@
+spike_in_count: 0  # type "long" (optional)
+outFileFormat: bigwig  # default value of type "string".
+normalizeUsing: "RPGC"  # default value of type "string".
+ignoreForNormalization: ["chrX", "chrY", "chrM"]  # array of type "string"
+filterRNAstrand: a_string  # type "string", "forward or reverse" (optional)
+extendReads: 0  # type "int" (optional)
+effective_genome_size: 0  # type "long"
+bin_size: 10  # default value of type "int".
+bam:  # type "File"
+    class: File
+    path: a/file/path
