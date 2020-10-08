@@ -26,7 +26,7 @@ inputs:
       Start refinement identifies potential start codons for 5' partial ORFs
       using a PWM, process on by default.
   - id: retainBlastpHits
-    type: string?
+    type: boolean?
     inputBinding:
       position: 0
       prefix: '--retain_blastp_hits'
@@ -47,7 +47,7 @@ inputs:
       even if no other evidence marks it as coding (default: 1000000) so
       essentially turned off by default.
   - id: retainLongOrfsMode
-    type: string?
+    type: boolean?
     inputBinding:
       position: 0
       prefix: '--retain_long_orfs_mode'
@@ -56,7 +56,7 @@ inputs:
       'dynamic' (default) or 'strict'. In dynamic mode, sets range according to
       1%FDR in random sequence of same GC content.
   - id: retainPfamHits
-    type: string?
+    type: boolean?
     inputBinding:
       position: 0
       prefix: '--retain_pfam_hits'
