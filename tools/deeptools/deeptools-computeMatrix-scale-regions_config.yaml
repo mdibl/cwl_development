@@ -1,0 +1,9 @@
+scoreFileName:  # array of type "File"
+  - class: File
+    path: a/file/path
+sample_id: a_string  # type "string"
+regionsFileName:  # type "File"
+    class: File
+    path: a/file/path
+beforeRegionStartLength: 0  # type "int" (optional)
+afterRegionStartLength: 0  # type "int" (optional)

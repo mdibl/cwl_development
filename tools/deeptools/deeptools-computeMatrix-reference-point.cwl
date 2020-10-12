@@ -6,9 +6,10 @@ requirements:
   - class: StepInputExpressionRequirement
 
 doc: |
-  In the scale-regions mode, all regions 
-  in the BED file are stretched or shrunken to 
-  the length (in bases) indicated by the user.
+  Reference-point refers to a position within a BED region 
+  (e.g., the starting point). In this mode, only those genomic
+  positions before (upstream) and/or after (downstream) of the 
+  reference point will be plotted.
 
 hints:
   ResourceRequirement:
@@ -22,7 +23,7 @@ hints:
         specs: [ "http://identifiers.org/biotools/deeptools" ]
         version: [ "3.1.1" ]
 
-baseCommand: ["computeMatrix", "scale-regions"]
+baseCommand: ["computeMatrix", "reference-point"]
 arguments:  
   - valueFrom: $(inputs.sample_id)
     prefix: --outFileName
