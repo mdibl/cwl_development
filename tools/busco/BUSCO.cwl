@@ -232,9 +232,9 @@ hints:
         specs:
           - 'https://identifiers.org/rrid/RRID:SCR_015008'
         version:
-          - 3.0.2
+          - 4.0.6
   - class: DockerRequirement
-    dockerPull: 'biocontainers/busco:4.0.6--pyr36_0'
+    dockerPull: 'quay.io/biocontainers/busco:4.0.6--pyr36_0'
   - class: gx:interface
     gx:inputs:
       - gx:name: blastSingleCore

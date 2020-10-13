@@ -1,0 +1,23 @@
+version: false  # type "boolean" (optional)
+tempPath:  # type "Directory" (optional)
+    class: Directory
+    path: a/directory/path
+tarzip: false  # type "boolean" (optional)
+species: a_string  # type "string" (optional)
+sequenceFile:  # type "File"
+    class: File
+    path: a/file/path
+restart: false  # type "boolean" (optional)
+regionLimit: 0  # type "int" (optional)
+quiet: false  # type "boolean" (optional)
+outputName: a_string  # type "string"
+mode: assessment_modes_enum_value  # enum; valid values: "geno", "prot", "tran"
+long: false  # type "boolean" (optional)
+lineage:  # type "Directory"
+    class: Directory
+    path: a/directory/path
+help: false  # type "boolean" (optional)
+force: false  # type "boolean" (optional)
+evalue: 0.1  # type "float" (optional)
+cpu: 0  # type "int" (optional)
+blastSingleCore: false  # type "boolean" (optional)
