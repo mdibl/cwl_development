@@ -74,7 +74,7 @@ outputs:
   matrix:
     type: File
     outputBinding:
-      glob: $(inputs.sample_id).NameMatrix.txt
+      glob: $(inputs.sample_id).NameMatrix.mat.gz
   sorted_regions:
     type: File
     outputBinding:
