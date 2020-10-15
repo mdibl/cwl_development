@@ -87,6 +87,8 @@ steps:
     in:
       - id: input
         source: transcriptsFile
+      - id: outName
+        source: transcriptsFile
     out:
       - id: outClstr
       - id: outSeq

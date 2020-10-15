@@ -37,7 +37,7 @@ inputs:
             prefix: -n
     
     outName:
-        type: string?
+        type: string
         doc: Output name
         inputBinding:
             prefix: -o
