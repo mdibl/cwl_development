@@ -8,7 +8,7 @@ requirements:
   - class: InitialWorkDirRequirement
     listing:
       - $(inputs.fq)
-baseCommand: ["Trinity", --full-cleanup]
+baseCommand: ["Trinity", --full_cleanup]
 
 inputs:
   seq_type: 
