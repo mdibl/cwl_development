@@ -8,7 +8,7 @@ requirements:
   - class: InitialWorkDirRequirement
     listing:
       - $(inputs.fq)
-baseCommand: ["Trinity", --full_cleanup]
+baseCommand: ["Trinity"]
 
 inputs:
   seq_type: 
@@ -57,7 +57,7 @@ outputs:
   trinity_results:
     type: Directory
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: "."
   trinity_fasta:
     type: File
     outputBinding:

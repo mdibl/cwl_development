@@ -9,11 +9,14 @@ inputs:
     type: string
     'sbg:x': 83
     'sbg:y': -22
-  - id: fq
+  - id: single_reads
     type: File
-    description: ''
-    'sbg:x': -573.7160034179688
-    'sbg:y': -9
+    label: Single read(s)
+    description: >
+      "single reads, one or more file names, comma-delimited (note, if single
+      file contains pairs, can use flag: --run_as_paired)"
+    'sbg:x': -535.7160034179688
+    'sbg:y': -19
 outputs:
   - id: peptide_sequences
     outputSource:
@@ -51,18 +54,19 @@ outputs:
     type: File
     'sbg:x': 625.828125
     'sbg:y': 139.5
-  - id: trinity_results
+  - id: assembly_dir
     outputSource:
-      - exp_trinity_se/trinity_results
+      - trinity_se/assembly_dir
     type: Directory
+    label: Assembly directory containing assembly results
     description: ''
-    'sbg:x': -167.71600341796875
-    'sbg:y': -201
+    'sbg:x': -101.71600341796875
+    'sbg:y': -246
 steps:
   - id: _trans_decoder__long_orfs_v5
     in:
       - id: transcriptsFile
-        source: exp_trinity_se/trinity_fasta
+        source: trinity_se/assembled_contigs
     out:
       - id: workingDir
     run: ../tools/TransDecoder/TransDecoder.LongOrfs-v5.cwl
@@ -76,7 +80,7 @@ steps:
       - id: longOpenReadingFrames
         source: _trans_decoder__long_orfs_v5/workingDir
       - id: transcriptsFile
-        source: exp_trinity_se/trinity_fasta
+        source: trinity_se/assembled_contigs
     out:
       - id: bed_output
       - id: coding_regions
@@ -91,7 +95,7 @@ steps:
   - id: cd_hit_est
     in:
       - id: input
-        source: exp_trinity_se/trinity_fasta
+        source: trinity_se/assembled_contigs
       - id: outName
         source: outName
     out:
@@ -101,16 +105,17 @@ steps:
     label: CD-HIT-est
     'sbg:x': 253
     'sbg:y': 80
-  - id: exp_trinity_se
+  - id: trinity_se
     in:
-      - id: fq
-        source: fq
+      - id: single_reads
+        source: single_reads
     out:
-      - id: trinity_fasta
-      - id: trinity_results
-    run: ../tools/trinity/exp_trinity_se.cwl
-    'sbg:x': -442
-    'sbg:y': -9
+      - id: assembly_dir
+      - id: assembled_contigs
+    run: ../tools/trinity/trinity_se.cwl
+    label: Trinity assembles transcript sequences from Illumina RNA-Seq data.
+    'sbg:x': -319
+    'sbg:y': -21
 requirements:
   - class: InlineJavascriptRequirement
   - class: StepInputExpressionRequirement
