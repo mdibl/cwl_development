@@ -61,7 +61,7 @@ outputs:
   trinity_fasta:
     type: File
     outputBinding:
-      glob: "Trinity.fasta"
+      glob: "*fasta"
 
 $namespaces:
   s: https://schema.org/
