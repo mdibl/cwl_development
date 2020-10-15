@@ -8,7 +8,7 @@ requirements:
   - class: InitialWorkDirRequirement
     listing:
       - $(inputs.fq)
-baseCommand: ["Trinity"]
+baseCommand: ["Trinity", --full-cleanup]
 
 inputs:
   seq_type: 
@@ -61,7 +61,7 @@ outputs:
   trinity_fasta:
     type: File
     outputBinding:
-      glob: "*fasta"
+      glob: "*"
 
 $namespaces:
   s: https://schema.org/
