@@ -59,11 +59,9 @@ outputs:
     outputBinding:
       glob: $(inputs.output_dir)
   trinity_fasta:
-    type:
-      type: array
-      items: File
+    type: File
     outputBinding:
-      glob: "*.fasta"
+      glob: "Trinity.fasta"
 
 $namespaces:
   s: https://schema.org/

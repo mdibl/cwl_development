@@ -5,14 +5,15 @@ label: minota_se-workflow
 $namespaces:
   sbg: 'https://www.sevenbridges.com/'
 inputs:
-  - id: transcriptsFile
-    type: File
-    'sbg:x': -85
-    'sbg:y': -46
   - id: outName
     type: string
-    'sbg:x': 0
-    'sbg:y': 214
+    'sbg:x': 83
+    'sbg:y': -22
+  - id: fq
+    type: File
+    description: ''
+    'sbg:x': -573.7160034179688
+    'sbg:y': -9
 outputs:
   - id: peptide_sequences
     outputSource:
@@ -50,25 +51,32 @@ outputs:
     type: File
     'sbg:x': 625.828125
     'sbg:y': 139.5
+  - id: trinity_results
+    outputSource:
+      - exp_trinity_se/trinity_results
+    type: Directory
+    description: ''
+    'sbg:x': -167.71600341796875
+    'sbg:y': -201
 steps:
   - id: _trans_decoder__long_orfs_v5
     in:
       - id: transcriptsFile
-        source: transcriptsFile
+        source: exp_trinity_se/trinity_fasta
     out:
       - id: workingDir
     run: ../tools/TransDecoder/TransDecoder.LongOrfs-v5.cwl
     label: >-
       TransDecoder.LongOrfs: Perl script, which extracts the long open reading
       frames
-    'sbg:x': 160.265625
-    'sbg:y': 214
+    'sbg:x': 187
+    'sbg:y': 292
   - id: _trans_decoder__predict_v5
     in:
       - id: longOpenReadingFrames
         source: _trans_decoder__long_orfs_v5/workingDir
       - id: transcriptsFile
-        source: transcriptsFile
+        source: exp_trinity_se/trinity_fasta
     out:
       - id: bed_output
       - id: coding_regions
@@ -78,12 +86,12 @@ steps:
     label: >-
       TransDecoder.Predict: Perl script, which predicts the likely coding
       regions
-    'sbg:x': 625.828125
-    'sbg:y': 267.5
+    'sbg:x': 495
+    'sbg:y': 291
   - id: cd_hit_est
     in:
       - id: input
-        source: transcriptsFile
+        source: exp_trinity_se/trinity_fasta
       - id: outName
         source: outName
     out:
@@ -91,8 +99,18 @@ steps:
       - id: outSeq
     run: ../tools/cd-hit-est/cd-hit-est.cwl
     label: CD-HIT-est
-    'sbg:x': 160.265625
-    'sbg:y': 100
+    'sbg:x': 253
+    'sbg:y': 80
+  - id: exp_trinity_se
+    in:
+      - id: fq
+        source: fq
+    out:
+      - id: trinity_fasta
+      - id: trinity_results
+    run: ../tools/trinity/exp_trinity_se.cwl
+    'sbg:x': -442
+    'sbg:y': -9
 requirements:
   - class: InlineJavascriptRequirement
   - class: StepInputExpressionRequirement
