@@ -1,4 +1,0 @@
-outName: default_string
-transcriptsFile:
-    class: File
-    path: default/file/path
