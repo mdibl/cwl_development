@@ -8,11 +8,8 @@ requirements:
   - class: InitialWorkDirRequirement
     listing:
       - $(inputs.fq)
-baseCommand: [Trinity, --full_cleanup]
 
-arguments:
-  - prefix: '--output'
-    valueFrom: $(runtime.outdir)/trinity_out_dir/
+baseCommand: [Trinity, --full_cleanup]
 
 inputs:
   seq_type: 
@@ -57,12 +54,17 @@ inputs:
     inputBinding:
       position: 8
       prefix: --normalize_by_read_set
+  output_dir:
+    type: string
+    inputBinding:
+      position: 9
+      prefix: --output
 
 outputs:
   trinity_results:
     type: Directory
     outputBinding:
-      glob: "."
+      glob: $(inputs.output_dir)
 
 
 $namespaces:
