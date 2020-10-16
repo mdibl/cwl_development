@@ -2,7 +2,8 @@ cwlVersion: v1.0
 class: CommandLineTool
 hints:
   DockerRequirement:
-    dockerPull: trinityrnaseq/trinityrnaseq
+    dockerPull: comics/trinityrnaseq:2.2.0
+    #dockerPull: trinityrnaseq/trinityrnaseq
 requirements:
   - class: InlineJavascriptRequirement
   - class: InitialWorkDirRequirement
@@ -65,15 +66,8 @@ outputs:
     type: Directory
     outputBinding:
       glob: $(inputs.output_dir)
-
-
-$namespaces:
-  s: https://schema.org/
-  edam: http://edamontology.org/
-
-s:license: https://spdx.org/licenses/Apache-2.0
-s:codeRepository: https://github.com/pitagora-network/pitagora-cwl
-
-$schemas:
-  - https://schema.org/docs/schema_org_rdfa.html
-  - http://edamontology.org/EDAM_1.18.owl
+  assembled_contigs:
+    label: Generated contigs
+    type: File
+    outputBinding:
+      glob: "*fasta"
