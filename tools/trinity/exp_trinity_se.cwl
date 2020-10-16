@@ -10,6 +10,10 @@ requirements:
       - $(inputs.fq)
 baseCommand: [Trinity, --full_cleanup]
 
+arguments:
+  - prefix: '--output'
+    valueFrom: $(runtime.outdir)/trinity_out_dir/
+
 inputs:
   seq_type: 
     type: string
@@ -53,17 +57,12 @@ inputs:
     inputBinding:
       position: 8
       prefix: --normalize_by_read_set
-  output_dir:
-    type: string
-    inputBinding:
-      position: 9
-      prefix: --output
 
 outputs:
   trinity_results:
     type: Directory
     outputBinding:
-      glob: $(inputs.output_dir)
+      glob: "."
 
 
 $namespaces:
