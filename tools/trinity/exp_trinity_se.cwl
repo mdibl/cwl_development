@@ -2,13 +2,18 @@ cwlVersion: v1.0
 class: CommandLineTool
 hints:
   DockerRequirement:
-    dockerPull: comics/trinityrnaseq:2.2.0
+    dockerPull: trinityrnaseq/trinityrnaseq
 requirements:
   - class: InlineJavascriptRequirement
   - class: InitialWorkDirRequirement
     listing:
       - $(inputs.fq)
-baseCommand: ["Trinity"]
+
+arguments:
+  - prefix: '--output'
+    valueFrom: $(runtime.outdir)/trinity_out_dir/
+
+baseCommand: [Trinity, --full_cleanup]
 
 inputs:
   seq_type: 
@@ -47,21 +52,18 @@ inputs:
     inputBinding:
       position: 7
       prefix: --trimmomatic
-  output_dir:
-    type: string
+  normalize_by_read_set:
+    type: boolean?
+    default: true
     inputBinding:
       position: 8
-      prefix: --output
+      prefix: --normalize_by_read_set
 
 outputs:
   trinity_results:
     type: Directory
     outputBinding:
       glob: "."
-  trinity_fasta:
-    type: File
-    outputBinding:
-      glob: "*fasta"
 
 $namespaces:
   s: https://schema.org/
