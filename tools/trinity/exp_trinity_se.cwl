@@ -2,17 +2,12 @@ cwlVersion: v1.0
 class: CommandLineTool
 hints:
   DockerRequirement:
-    dockerPull: trinityrnaseq/trinityrnaseq
+    dockerPull: comics/trinityrnaseq:2.2.0
 requirements:
   - class: InlineJavascriptRequirement
   - class: InitialWorkDirRequirement
     listing:
       - $(inputs.fq)
-
-#arguments:
-#  - prefix: '--output'
-#    valueFrom: $(runtime.outdir)/trinity_out_dir/
-
 baseCommand: [Trinity, --full_cleanup]
 
 inputs:
@@ -69,6 +64,7 @@ outputs:
     type: Directory
     outputBinding:
       glob: $(inputs.output_dir)
+
 
 $namespaces:
   s: https://schema.org/
