@@ -9,9 +9,9 @@ requirements:
     listing:
       - $(inputs.fq)
 
-arguments:
-  - prefix: '--output'
-    valueFrom: $(runtime.outdir)/trinity_out_dir/
+#arguments:
+#  - prefix: '--output'
+#    valueFrom: $(runtime.outdir)/trinity_out_dir/
 
 baseCommand: [Trinity, --full_cleanup]
 
@@ -58,12 +58,17 @@ inputs:
     inputBinding:
       position: 8
       prefix: --normalize_by_read_set
+  output_dir:
+    type: string
+    inputBinding:
+      position: 9
+      prefix: --output
 
 outputs:
   trinity_results:
     type: Directory
     outputBinding:
-      glob: "."
+      glob: $(inputs.output_dir)
 
 $namespaces:
   s: https://schema.org/
