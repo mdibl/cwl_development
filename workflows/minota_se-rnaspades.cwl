@@ -13,8 +13,15 @@ inputs:
     type: int
   - id: memory
     type: int
+  - id: rna_mode
+    type: boolean
 
 outputs:
+  - id: transcript_file
+    outputSource:
+      - rnaspades/transcript_file
+    type: File
+
   - id: outSeq
     outputSource:
       - cd_hit_est/outSeq
@@ -54,6 +61,8 @@ steps:
         source: memory
       - id: threads
         source: threads
+      - id: rna_mode
+        source: rna_mode
     out:
       - id: transcript_file
     run: ../tools/spades/rnaspades.cwl

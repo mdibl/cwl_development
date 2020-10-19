@@ -16,7 +16,7 @@ arguments:
 
 inputs:
   rna_mode:
-    type: boolean?
+    type: boolean
     inputBinding:
       prefix: --rna
   single_reads:
