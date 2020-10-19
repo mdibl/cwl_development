@@ -1,0 +1,6 @@
+memory: 0  # type "int"
+threads: 0  # type "int"
+outName: a_string  # type "string"
+single_reads:  # type "File"
+    class: File
+    path: a/file/path

@@ -7,6 +7,12 @@ $namespaces:
 inputs:
   - id: single_reads
     type: File
+  - id: outName
+    type: string
+  - id: threads
+    type: int
+  - id: memory
+    type: int
 
 outputs:
   - id: outSeq
@@ -44,6 +50,10 @@ steps:
     in:
       - id: single_reads
         source: single_reads
+      - id: memory
+        source: memory
+      - id: threads
+        source: threads
     out:
       - id: transcript_file
     run: ../tools/spades/rnaspades.cwl
