@@ -2,6 +2,7 @@ cwlVersion: v1.0
 class: CommandLineTool
 hints:
   DockerRequirement:
+    dockerImageId: comics/trinityrnaseq:2.2.0
     dockerPull: comics/trinityrnaseq:2.2.0
     #dockerPull: trinityrnaseq/trinityrnaseq
 requirements:
@@ -10,7 +11,7 @@ requirements:
     listing:
       - $(inputs.fq)
 
-baseCommand: [Trinity, --full_cleanup]
+baseCommand: [Trinity]
 
 inputs:
   seq_type: 
