@@ -11,7 +11,7 @@ requirements:
     listing:
       - $(inputs.fq)
 
-baseCommand: [Trinity]
+baseCommand: [Trinity, --full_cleanup]
 
 inputs:
   seq_type: 
