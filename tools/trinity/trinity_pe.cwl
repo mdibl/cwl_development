@@ -117,4 +117,5 @@ arguments:
 
 hints:
   - class: DockerRequirement
+    dockerImageId: trinityrnaseq/trinityrnaseq
     dockerPull: trinityrnaseq/trinityrnaseq
