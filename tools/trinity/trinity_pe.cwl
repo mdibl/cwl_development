@@ -87,18 +87,33 @@ inputs:
       position: 10
       prefix: '--normalize_by_read_set'
     label: 'Run normalization separate for each pair of fastq files'
+  - id: output_dir
+    type: string
+    inputBinding:
+      position: 11
+      prefix: --output
 
 outputs:
-  - id: assembly_dir
-    label: Assembly directory containing assembly results
-    type: Directory
-    outputBinding:
-      glob: "."
+  #- id: assembly_dir
+    #label: Assembly directory containing assembly results
+    #type: Directory
+    #outputBinding:
+      #glob: "."
   - id: assembled_contigs
     label: Generated contigs
     type: File
     outputBinding:
-      glob: "*fasta"
+      glob: "$(inputs.output_dir)/*fasta"
+  - id: trans_map
+    label: Gene-to-trans-map
+    type: File
+    outputBinding:
+      glob: "$(inputs.output_dir)/*trans_map"
+  - id: timing_file
+    label: trinity.timing file 
+    type: File
+    outputBinding:
+      glob: "$(inputs.output_dir)/*Trinity.timing"
 
 doc: >
   "Trinity, developed at the Broad Institute and the Hebrew University of
@@ -111,9 +126,9 @@ doc: >
 
 label: Trinity assembles transcript sequences from Illumina RNA-Seq data.
 
-arguments:
-  - prefix: '--output'
-    valueFrom: $(runtime.outdir)/trinity_out_dir/
+#arguments:
+  #- prefix: '--output'
+    #valueFrom: $(runtime.outdir)/trinity_out_dir/
 
 hints:
   - class: DockerRequirement

@@ -13,7 +13,7 @@ inputs:
 
   peak_file:
     type: File
-    doc: "Homer generated peak file or BED"
+    doc: 'Homer generated peak file or BED'
 
   tag_folders:
     type:
@@ -22,7 +22,7 @@ inputs:
     inputBinding:
       position: 7
       prefix: "-d"
-    doc: "Tag folders from homer-make-tag-directory tool"
+    doc: 'Tag folders from homer-make-tag-directory tool'
 
   hist_width:
     type:
@@ -32,10 +32,10 @@ inputs:
       position: 8
       prefix: "-size"
     doc: |
-      Possible values:
+      'Possible values:
         #"#" - performs analysis on the "#" bp surrounding the peak centers
         ##,#" - performs analysis from "#" to "#" relative to peak center
-        #"given" - set size to actual coordinates in peak/BED file
+        #"given" - set size to actual coordinates in peak/BED file'
 
   hist_bin_size:
     type: int
@@ -43,8 +43,8 @@ inputs:
       position: 9
       prefix: "-hist"
     doc: |
-      Bin size, bp. If hist_width is "given" or skipped, this
-      parameter will set the number of bins to divide each region into
+      'Bin size, bp. If hist_width is "given" or skipped, this
+      parameter will set the number of bins to divide each region into'
 
   export_heatmap:
     type: boolean?
@@ -52,8 +52,8 @@ inputs:
       position: 10
       prefix: "-ghist"
     doc: |
-      Generate heatmap. Instead of averaging all of the data
-      from each peak, keep data from each peak separate
+      'Generate heatmap. Instead of averaging all of the data
+      from each peak, keep data from each peak separate'
 
   norm_fpkm:
     type: boolean?
@@ -61,7 +61,7 @@ inputs:
       position: 11
       prefix: "-fpkm"
     doc: |
-      Normalize read counts to million reads or fragments per kilobase mapped
+      'Normalize read counts to million reads or fragments per kilobase mapped'
 
   norm_raw:
     type: boolean?
@@ -69,8 +69,8 @@ inputs:
       position: 12
       prefix: "-raw"
     doc: |
-      Do not adjust the tag counts based on total tags sequenced.
-      By default all tag counts will be normalized to norm_tag_count
+      'Do not adjust the tag counts based on total tags sequenced.
+      By default all tag counts will be normalized to norm_tag_count'
 
   norm_tag_count:
     type: int?
@@ -78,7 +78,7 @@ inputs:
       position: 13
       prefix: "-norm"
     doc: |
-      Normalize tags to this tag count, default=1e7, 0=average tag count in all directories
+      'Normalize tags to this tag count, default=1e7, 0=average tag count in all directories'
 
   norm_fragment_size:
     type: int?
@@ -86,7 +86,7 @@ inputs:
       position: 14
       prefix: "-normLength"
     doc: |
-      Fragment length to normlize to for experiments with different lens. Default: 100bp
+      'Fragment length to normlize to for experiments with different lens. Default: 100bp
 
   strand:
     type: string?
@@ -94,8 +94,8 @@ inputs:
       position: 15
       prefix: "-strand"
     doc: |
-      Count tags on specific strands relative to peak. Default: both
-      Possible values: +|-
+      'Count tags on specific strands relative to peak. Default: both
+      Possible values: +|-''
 
   threads:
     type: int?
@@ -103,7 +103,7 @@ inputs:
       position: 16
       prefix: "-cpu"
     doc: |
-      Set the number of threads. Default: 1
+      'Set the number of threads. Default: 1'
 
   histogram_filename:
     type: string

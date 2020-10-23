@@ -10,7 +10,7 @@ requirements:
       - $import: trinity-ss_lib_type.yaml
       - $import: trinity-seq_type.yaml
 
-baseCommand: [ Trinity, --full_cleanup ]
+baseCommand: [ Trinity ]
 inputs:
   - id: trinity_seq_type
     type: string
@@ -86,16 +86,26 @@ inputs:
       prefix: --output
 
 outputs:
-  - id: assembly_dir
-    label: Assembly directory containing assembly results
-    type: Directory
-    outputBinding:
-      glob: $(inputs.output_dir)
+  #- id: assembly_dir
+    #label: Assembly directory containing assembly results
+    #type: Directory
+    #outputBinding:
+      #glob: $(inputs.output_dir)
   - id: assembled_contigs
     label: Generated contigs
     type: File
     outputBinding:
-      glob: "*fasta"
+      glob: "$(inputs.output_dir)/*fasta"
+  - id: trans_map
+    label: Gene-to-trans-map
+    type: File
+    outputBinding:
+      glob: "$(inputs.output_dir)/*trans_map"
+  - id: timing_file
+    label: trinity.timing file 
+    type: File
+    outputBinding:
+      glob: "$(inputs.output_dir)/*Trinity.timing"
 
 doc: >
   "Trinity, developed at the Broad Institute and the Hebrew University of
@@ -110,9 +120,10 @@ label: Trinity assembles transcript sequences from Illumina RNA-Seq data.
 
 #arguments:
   #- prefix: '--output'
-    #valueFrom: $(runtime.outdir)/tr/
+    #valueFrom: $(runtime.outdir)
 
 hints:
   - class: DockerRequirement
     dockerImageId: trinityrnaseq/trinityrnaseq
     dockerPull: trinityrnaseq/trinityrnaseq
+  - class: InlineJavascriptRequirement
