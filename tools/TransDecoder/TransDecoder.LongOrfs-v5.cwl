@@ -7,7 +7,7 @@ $namespaces:
 baseCommand: [ TransDecoder.LongOrfs ]
 inputs:
   - id: geneToTranscriptMap
-    type: File?
+    type: File
     inputBinding:
       position: 0
       prefix: '--gene_trans_map'
