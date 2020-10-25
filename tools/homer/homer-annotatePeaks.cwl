@@ -117,7 +117,7 @@ outputs:
 
 stdout: ${return inputs.histogram_filename;}
 
-baseCommand: ["annotatePeaks.pl"]
+baseCommand: [ annotatePeaks.pl ]
 arguments:
   - valueFrom: $(inputs.peak_file)
     position: 5

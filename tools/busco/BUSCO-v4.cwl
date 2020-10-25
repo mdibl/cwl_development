@@ -5,9 +5,14 @@ $namespaces:
   edam: 'http://edamontology.org/'
   iana: 'https://www.iana.org/assignments/media-types/'
   s: 'http://schema.org/'
-baseCommand:
-  - run_BUSCO.py
+baseCommand: [busco]
 inputs:
+  - id: configFile
+    type: File?
+    inputBinding:
+      position: 0
+      prefix: --config
+    label: point to a specific config file
   - id: blastSingleCore
     type: boolean?
     inputBinding:
@@ -50,8 +55,8 @@ inputs:
     type: Directory
     inputBinding:
       position: 0
-      prefix: '--lineage_path'
-    label: Location of the BUSCO lineage data to use (e.g. fungi_odb9)
+      prefix: '--lineage_dataset'
+    label: Location of the BUSCO lineage data to use (e.g. fungi_odb10)
     doc: |
       Specify location of the BUSCO lineage data to be used.
       Visit http://busco.ezlab.org/ for available lineages.
@@ -234,7 +239,8 @@ hints:
         version:
           - 4.0.6
   - class: DockerRequirement
-    dockerPull: 'quay.io/biocontainers/busco:4.0.6--pyr36_0'
+    #dockerPull: 'quay.io/biocontainers/busco:4.0.6--pyr36_0'
+    dockerPull: 'ezlabgva/busco:v5.beta.1_cv1'
   - class: gx:interface
     gx:inputs:
       - gx:name: blastSingleCore

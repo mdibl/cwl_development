@@ -5,7 +5,7 @@ force: null
 help: null
 lineage:
   class: Directory
-  path: /data/transformed/busco/metazoa_odb9
+  path: /data/transformed/busco_lineages/release-v2/eukaryota/metazoa_odb9
 long: null
 mode: tran
 outputName: Homarus_americanus_GFDA01.1.fsa_nt

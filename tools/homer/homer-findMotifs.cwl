@@ -8,11 +8,11 @@ doc: >
     motifs in large scale genomics data."
 
 requirements:
-  InlineJavascriptRequirement: {}
+ - class: InlineJavascriptRequirement
 
 hints:
-  DockerRequirement:
-    dockerImageId: homer_mouse:4.11
+ - class: DockerRequirement
+   dockerPull: biowardrobe2/homer:v0.0.2
 
 baseCommand: [ findMotifs.pl ]
 
@@ -57,10 +57,18 @@ inputs:
   motif_length:
     label: "motif length, memory heavy"
     doc: "motif length, memory heavy"
-    type: int
+    type: string
     inputBinding:
       position: 5
       prefix: -len
+
+  cpu:
+    label: "number of cpu threads"
+    doc: "number of cpu threads"
+    type: int
+    inputBinding:
+      position: 6
+      prefix: -p
 
 outputs:
   findMotif_results:
@@ -68,7 +76,7 @@ outputs:
       type: array
       items: [ File, Directory ]
     outputBinding:
-      glob: "*.txt"
+      glob: "*"
     
   console_log:
     type: stdout
@@ -76,5 +84,5 @@ outputs:
   error_log:
     type: stdout
     
-stdout: "Homer-findMotifs_console.txt"
-stderr: "Homer-findMotifs_error.txt"
+stdout: "homer-findMotifs_console.txt"
+stderr: "homer-findMotifs_error.txt"
