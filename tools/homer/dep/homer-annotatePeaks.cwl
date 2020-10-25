@@ -1,6 +1,12 @@
 #!/usr/bin/env cwl-runner
 cwlVersion: v1.0
 class: CommandLineTool
+label: "Homer (Hypergeometric Optimization of Motif EnRichment) is a suite of tools for Motif Discovery and ChIP-Seq analysis"
+doc: >
+    "Homer (Hypergeometric Optimization of Motif EnRichment) is a suite of tools for Motif Discovery and ChIP-Seq analysis. 
+    It is a collection of command line programs for unix-style operating systems written in mostly perl and c++. 
+    Homer was primarily written as a de novo motif discovery algorithm that is well suited for finding 8-12 bp 
+    motifs in large scale genomics data."
 
 requirements:
 - class: InlineJavascriptRequirement
@@ -9,8 +15,15 @@ hints:
 - class: DockerRequirement
   dockerPull: biowardrobe2/homer:v0.0.2
 
-inputs:
+baseCommand: [ annotatePeaks.pl ]
 
+arguments:
+  - valueFrom: $(inputs.peak_file)
+    position: 5
+  - valueFrom: $("none")
+    position: 6
+
+inputs:
   peak_file:
     type: File
     doc: 'Homer generated peak file or BED'
@@ -26,8 +39,8 @@ inputs:
 
   hist_width:
     type:
-      - int
-      #- string
+      #- int
+      - string
     inputBinding:
       position: 8
       prefix: "-size"
@@ -107,7 +120,13 @@ inputs:
 
   histogram_filename:
     type: string
-    doc: "Output histogram's filename"
+    doc: 'Output histogram's filename'
+  
+  tss:
+    type: boolean?
+    inputBinding:
+      prefix: "tss"
+    doc: 'Analyze transcription start sites as if they were peaks'
 
 outputs:
 
@@ -116,13 +135,6 @@ outputs:
     doc: "Output histogram file"
 
 stdout: ${return inputs.histogram_filename;}
-
-baseCommand: [ annotatePeaks.pl ]
-arguments:
-  - valueFrom: $(inputs.peak_file)
-    position: 5
-  - valueFrom: $("none")
-    position: 6
 
 # $namespaces:
 #   s: http://schema.org/

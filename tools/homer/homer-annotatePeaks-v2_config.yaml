@@ -1,0 +1,9 @@
+tss: false  # type "boolean" (optional)
+threads: 0  # type "int" (optional)
+motif_file:  # type "File"
+    class: File
+    path: a/file/path
+motif_density_hist: 0  # type "int" (optional)
+histogram_filename: a_string  # type "string"
+hist_width: a_string  # type "string"
+genome: a_string  # type "string"
