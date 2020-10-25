@@ -8,7 +8,7 @@ $namespaces:
 baseCommand: [busco]
 inputs:
   - id: configFile
-    type: File?
+    type: File
     inputBinding:
       position: 0
       prefix: --config
