@@ -132,5 +132,5 @@ label: Trinity assembles transcript sequences from Illumina RNA-Seq data.
 
 hints:
   - class: DockerRequirement
-    dockerImageId: trinityrnaseq/trinityrnaseq
+    dockerImageId: trinityrnaseq:latest
     dockerPull: trinityrnaseq/trinityrnaseq

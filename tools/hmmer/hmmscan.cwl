@@ -3,6 +3,7 @@ class: CommandLineTool
 doc: search sequence(s) against a profile database
 hints:
     DockerRequirement:
+        dockerImageId: hmmer:3.3.1
         dockerPull: comics/hmmer:latest
 baseCommand: hmmscan
 

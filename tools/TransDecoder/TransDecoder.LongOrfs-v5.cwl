@@ -87,6 +87,7 @@ requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
+    dockerImageId: transdecoder:5.5.0
     dockerPull: 'biocontainers/transdecoder:v5.0.1-2-deb_cv1'
   - class: gx:interface
     gx:inputs:

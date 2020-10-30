@@ -231,13 +231,6 @@ requirements:
     types:
       - $import: BUSCO-assessment_modes.yaml
 hints:
-  - class: SoftwareRequirement
-    packages:
-      BUSCO:
-        specs:
-          - 'https://identifiers.org/rrid/RRID:SCR_015008'
-        version:
-          - 4.0.6
   - class: DockerRequirement
     #dockerPull: 'quay.io/biocontainers/busco:4.0.6--pyr36_0'
     dockerPull: 'ezlabgva/busco:v5.beta.1_cv1'

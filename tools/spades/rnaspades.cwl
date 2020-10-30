@@ -3,6 +3,7 @@ class: CommandLineTool
 
 hints:
   DockerRequirement:
+    dockerImageId: rnaspades:3.14.1
     dockerPull: quay.io/biocontainers/spades:3.14.0--h2d02072_0
 
 requirements:

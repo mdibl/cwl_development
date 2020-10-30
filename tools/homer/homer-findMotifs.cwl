@@ -1,3 +1,4 @@
+#!/usr/bin/env cwl-runner
 cwlVersion: v1.0
 class: CommandLineTool
 label: "Homer (Hypergeometric Optimization of Motif EnRichment) is a suite of tools for Motif Discovery and ChIP-Seq analysis"
@@ -10,9 +11,9 @@ doc: >
 requirements:
  - class: InlineJavascriptRequirement
 
-hints:
- - class: DockerRequirement
-   dockerPull: biowardrobe2/homer:v0.0.2
+#hints:
+ #- class: DockerRequirement
+   #dockerPull: biowardrobe2/homer:v0.0.2
 
 baseCommand: [ findMotifs.pl ]
 

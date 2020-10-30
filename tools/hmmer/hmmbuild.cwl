@@ -3,6 +3,7 @@ class: CommandLineTool
 doc: profile HMM construction from multiple sequence alignments
 hints:
     DockerRequirement:
+        dockerImageId: hmmer:3.3.1
         dockerPull: comics/hmmer:latest
 baseCommand: hmmbuild
 

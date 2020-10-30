@@ -10,6 +10,7 @@ doc: |
 
 hints:
     DockerRequirement:
+        dockerImageId: cdhit:4.8.1
         dockerPull: mgrast/pipeline:4.03
 
 requirements:
