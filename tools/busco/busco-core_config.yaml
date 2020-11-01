@@ -1,0 +1,4 @@
+configFile:
+    class: File
+    path: ./config.ini
+outputName: Homarus_americanus_GFDA01.1.fsa_nt

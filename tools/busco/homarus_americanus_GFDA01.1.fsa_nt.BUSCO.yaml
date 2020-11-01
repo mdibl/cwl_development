@@ -1,11 +1,11 @@
 blastSingleCore: null
-cpu: 8
+cpu: 4
 evalue: null
 force: null
 help: null
 lineage:
   class: Directory
-  path: /data/transformed/busco_lineages/release-v2/eukaryota/metazoa_odb9
+  path: /data/scratch/nmaki/busco/metazoa_odb10
 long: null
 mode: tran
 outputName: Homarus_americanus_GFDA01.1.fsa_nt
@@ -16,6 +16,10 @@ sequenceFile:
   class: File
   format: 'edam:format_1929'
   path: /data/external/TSA/Homarus_americanus_GFDA01.1.fsa_nt
+configFile:
+  class: File
+  format: 'edam:format_1929'
+  path: ./config.ini
 species: null
 tarzip: null
 tempPath: null
