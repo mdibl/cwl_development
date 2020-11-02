@@ -14,7 +14,7 @@ baseCommand: [ Trinity, --full_cleanup ]
 inputs:
   - id: trinity_seq_type
     type: string
-    default: fa
+    default: fq
     inputBinding:
       position: 1
       prefix: '--seqType'
@@ -22,7 +22,8 @@ inputs:
     doc: >
       "type of reads: (fa or fq)"
   - id: trimmomatic
-    type: boolean?
+    type: boolean
+    default: true
     inputBinding:
       position: 2
       prefix: '--trimmomatic'
@@ -67,7 +68,7 @@ inputs:
       "Strand-specific RNA-Seq read orientation. if paired: RF or FR, if single:
       F or R. (dUTP method = RF). See web documentation"
   - id: trinity_cpu
-    type: int?
+    type: int
     default: 8
     inputBinding:
       position: 8
@@ -82,7 +83,8 @@ inputs:
       prefix: '--no_normalize_reads'
     label: 'Do *not* run in silico normalization of reads. default: normalize reads'
   - id: normalize_by_read_set
-    type: boolean?
+    type: boolean
+    default: true
     inputBinding:
       position: 10
       prefix: '--normalize_by_read_set'
