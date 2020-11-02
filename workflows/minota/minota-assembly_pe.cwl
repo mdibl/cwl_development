@@ -8,27 +8,31 @@ inputs:
   - id: right_reads
     type: File
     label: right read(s)
-
     'sbg:x': -436.07415771484375
     'sbg:y': -126.92986297607422
   - id: left_reads
     type: File
     label: left read(s)
-
     'sbg:x': -417.048095703125
     'sbg:y': 101
+  - id: trinity_ss_lib_type
+    type: string
+    label: trinity read orientation
+  - id: output_dir
+    type: string
+    label: name of output file
 outputs:
   - id: fastqc_result
     outputSource:
       - fastqc/fastqc_result
-    type: 'File[]'
+    type: 'File'
 
     'sbg:x': -104.9238510131836
     'sbg:y': -305.99798583984375
   - id: fastqc_result_1
     outputSource:
       - fastqc_1/fastqc_result
-    type: 'File[]'
+    type: 'File'
 
     'sbg:x': -112.94188690185547
     'sbg:y': 255
@@ -63,6 +67,10 @@ steps:
         source: left_reads
       - id: right_reads
         source: right_reads
+      - id: trinity_ss_lib_type
+        source: trinity_ss_lib_type
+      - id: output_dir
+        source: output_dir
     out:
       - id: assembled_contigs
       - id: trans_map

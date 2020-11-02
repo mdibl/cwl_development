@@ -22,8 +22,8 @@ arguments:
 
 inputs:
   seqfile:
-    doc: "a set of sequence files"
-    type: File[]
+    doc: "a sequence files"
+    type: File
     inputBinding:
       position: 100
   casava:
@@ -120,7 +120,7 @@ inputs:
 
 outputs:
   fastqc_result:
-    type: File[]
+    type: File
     outputBinding:
       glob: "*_fastqc.zip"
   #console_log:
