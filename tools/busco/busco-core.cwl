@@ -13,6 +13,8 @@ requirements:
   - class: SchemaDefRequirement
     types:
       - $import: BUSCO-assessment_modes.yaml
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.configFile)
 
 baseCommand: [ busco ]
 
@@ -23,16 +25,16 @@ inputs:
       position: 0
       prefix: --config
   
-  - id: outputName
-    type: string
-    inputBinding:
-      position: 0
-      prefix: '--out'
-    label: Name to use for the run and all temporary files (appended)
-    doc: |
-      Give your analysis run a recognisable short name.
-      Output folders and files will be labelled (prepended) with this name.
-      WARNING: do not provide a path.
+  #- id: outputName
+    #type: string
+    #inputBinding:
+      #position: 0
+      #prefix: '--out'
+    #label: Name to use for the run and all temporary files (appended)
+    #doc: |
+      #Give your analysis run a recognisable short name.
+      #Output folders and files will be labelled (prepended) with this name.
+      #WARNING: do not provide a path.
 
 outputs: 
   - id: blastOutput

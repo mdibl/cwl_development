@@ -230,6 +230,8 @@ requirements:
   - class: SchemaDefRequirement
     types:
       - $import: BUSCO-assessment_modes.yaml
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.configFile)
 hints:
   - class: DockerRequirement
     dockerPull: 'quay.io/biocontainers/busco:4.0.6--pyr36_0'
