@@ -1,8 +1,8 @@
-seqfile:  # array of type "File"
-  - class: File
+seqfile:  # type "File"
+    class: File
     path: a/file/path
 quiet: false  # type "boolean" (optional)
-output_prefix: a_string  # type "string" (optional)
+output_prefix: a_string  # type "string"
 nthreads: 8  # default value of type "int".
 nogroup: true  # default value of type "boolean". (optional)
 nofilter: false  # type "boolean" (optional)

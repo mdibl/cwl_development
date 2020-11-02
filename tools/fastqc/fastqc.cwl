@@ -121,11 +121,7 @@ outputs:
     type: File
     outputBinding:
       glob: "*_fastqc.zip"
-  console_log:
-    type: stdout
-  error_log:
-    type: stderr
 
-stdout: $(inputs.output_prefix + ".fastqc.console.txt")
-stderr: $(inputs.output_prefix + ".fastqc.error.txt")
+#stdout: $(inputs.output_prefix + ".fastqc.console.txt")
+#stderr: $(inputs.output_prefix + ".fastqc.error.txt")
 

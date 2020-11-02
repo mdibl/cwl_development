@@ -12,7 +12,7 @@ hints:
       dockerPull: mgrast/pipeline:4.03
 
 requirements:
-  - class: InlineJavascriptRequirement: {}
+  - class: InlineJavascriptRequirement
 
 baseCommand: [ cd-hit-est ]
 
@@ -62,10 +62,6 @@ outputs:
     type: File
     outputBinding: 
       glob: $(inputs.output_prefix).clstr
-  console_log:
-    type: stdout
-  error_log:
-    type: stderr
 
 stdout: $(inputs.output_prefix + ".cd-hit-est.console.txt")
 stderr: $(inputs.output_prefix + ".cd-hit-est.error.txt")

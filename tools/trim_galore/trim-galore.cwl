@@ -207,10 +207,6 @@ outputs:
       items: File # since one or two matches (single/paired end)
     outputBinding:
       glob: "*fastqc.zip"
-  console_log:
-    type: stdout
-  error_log:
-    type: stderr
 
 stdout: $(inputs.output_prefix + ".trim_galore.console.txt")
 stderr: $(inputs.output_prefix + ".trim_galore.error.txt")

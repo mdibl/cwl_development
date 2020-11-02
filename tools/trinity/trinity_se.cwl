@@ -111,13 +111,9 @@ outputs:
     type: File
     outputBinding:
       glob: "$(inputs.output_dir)/*Trinity.timing"
-  - id: console_log
-    type: stdout
-  - id: error_log
-    type: stderr
 
-stdout: $(inputs.output_dir + ".trinity_se.console.txt")
-stderr: $(inputs.output_dir + ".trinity_se.error.txt")
+#stdout: $(inputs.output_dir + ".trinity_se.console.txt")
+#stderr: $(inputs.output_dir + ".trinity_se.error.txt")
 
 doc: >
   "Trinity, developed at the Broad Institute and the Hebrew University of

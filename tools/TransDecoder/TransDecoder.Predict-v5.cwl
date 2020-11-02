@@ -114,10 +114,6 @@ outputs:
     type: File
     outputBinding:
       glob: $(inputs.transcriptsFile.basename).transdecoder.pep
-  - id: console_log
-    type: stdout
-  - id: error_log
-    type: stderr
 
 stdout: $(inputs.transcriptsFile.basename + ".TransDecoder.Predict.console.txt")
 stderr: $(inputs.transcriptsFile.basename + ".TransDecoder.Predict.error.txt")

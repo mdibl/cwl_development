@@ -8,8 +8,8 @@ inputs:
   - id: right_reads
     type: File
     label: right read(s)
-    'sbg:x': -436.07415771484375
-    'sbg:y': -126.92986297607422
+    'sbg:x': -449
+    'sbg:y': -126
   - id: left_reads
     type: File
     label: left read(s)
@@ -20,20 +20,20 @@ inputs:
     label: trinity read orientation
   - id: output_dir
     type: string
-    label: name of output file
+    label: name of output file for Trinity (must include Trinity in name)
+  - id: output_prefix
+    type: string
 outputs:
   - id: fastqc_result
     outputSource:
       - fastqc/fastqc_result
-    type: 'File'
-
-    'sbg:x': -104.9238510131836
-    'sbg:y': -305.99798583984375
+    type: File
+    'sbg:x': -119
+    'sbg:y': -393
   - id: fastqc_result_1
     outputSource:
       - fastqc_1/fastqc_result
-    type: 'File'
-
+    type: File
     'sbg:x': -112.94188690185547
     'sbg:y': 255
   - id: trans_map
@@ -41,7 +41,6 @@ outputs:
       - trinity_pe/trans_map
     type: File
     label: Gene-to-trans-map
-
     'sbg:x': -33.0861701965332
     'sbg:y': -152.03005981445312
   - id: timing_file
@@ -49,7 +48,6 @@ outputs:
       - trinity_pe/timing_file
     type: File
     label: trinity.timing file
-
     'sbg:x': -51.969940185546875
     'sbg:y': -27.054109573364258
   - id: assembled_contigs
@@ -57,7 +55,6 @@ outputs:
       - trinity_pe/assembled_contigs
     type: File
     label: Generated contigs
-
     'sbg:x': -47.909820556640625
     'sbg:y': 112.98397064208984
 steps:
@@ -82,8 +79,9 @@ steps:
   - id: fastqc
     in:
       - id: seqfile
-        source:
-          - right_reads
+        source: right_reads
+      - id: output_prefix
+        source: output_prefix
     out:
       - id: fastqc_result
     run: ../../tools/fastqc/fastqc.cwl
@@ -93,8 +91,9 @@ steps:
   - id: fastqc_1
     in:
       - id: seqfile
-        source:
-          - left_reads
+        source: left_reads
+      - id: output_prefix
+        source: output_prefix
     out:
       - id: fastqc_result
     run: ../../tools/fastqc/fastqc.cwl

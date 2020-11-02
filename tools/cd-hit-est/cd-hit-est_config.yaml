@@ -1,5 +1,5 @@
 word: 9  # default value of type "int". (optional)
-outName: a_string  # type "string"
+output_prefix: a_string  # type "string"
 input:  # type "File"
     class: File
     path: a/file/path

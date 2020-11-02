@@ -50,10 +50,6 @@ outputs:
     type: Directory
     outputBinding:
       glob: $(inputs.transcriptsFile.basename).transdecoder_dir
-  - id: console_log
-    type: stdout
-  - id: error_log
-    type: stderr
 
 stdout: $(inputs.transcriptsFile.basename + ".TransDecoder.LongOrfs.console.txt")
 stderr: $(inputs.transcriptsFile.basename + ".TransDecoder.LongOrfs.error.txt")
