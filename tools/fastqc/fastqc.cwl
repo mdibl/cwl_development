@@ -14,7 +14,7 @@ hints:
 requirements:
   - class: InlineJavascriptRequirement
 
-baseCommand: [ fastqc ]
+baseCommand: [fastqc]
 
 arguments:
   - prefix: --outdir
@@ -111,23 +111,23 @@ inputs:
     type: Directory?
     inputBinding:
       prefix: --dir
-  output_prefix:
-    label: "prefix to be added to output files"
-    doc: "creates a tag to be added to output file names"
-    type: string?
-    default: ""
-    inputBinding: null
+  #output_prefix:
+    #label: "prefix to be added to output files"
+    #doc: "creates a tag to be added to output file names"
+    #type: string?
+    #default: ""
+    #inputBinding: null
 
 outputs:
   fastqc_result:
     type: File[]
     outputBinding:
       glob: "*_fastqc.zip"
-  console_log:
-    type: stdout
-  error_log:
-    type: stderr
+  #console_log:
+    #type: stdout
+  #error_log:
+    #type: stderr
 
-stdout: $(inputs.output_prefix + ".fastqc.console.txt")
-stderr: $(inputs.output_prefix + ".fastqc.error.txt")
+#stdout: $(inputs.output_prefix + ".fastqc.console.txt")
+#stderr: $(inputs.output_prefix + ".fastqc.error.txt")
 
