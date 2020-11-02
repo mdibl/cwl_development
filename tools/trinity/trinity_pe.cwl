@@ -1,8 +1,8 @@
 class: CommandLineTool
 cwlVersion: v1.0
-$namespaces:
-  edam: 'http://edamontology.org/'
-  s: 'http://schema.org/'
+#$namespaces:
+  #edam: 'http://edamontology.org/'
+  #s: 'http://schema.org/'
 
 requirements:
   - class: InlineJavascriptRequirement
@@ -79,14 +79,14 @@ inputs:
       "number of CPUs to use by Trinity"
   - id: no_normalize_reads
     type: boolean
-    default: false
+    default: true
     inputBinding:
       position: 9
       prefix: '--no_normalize_reads'
     label: 'Do *not* run in silico normalization of reads. default: normalize reads'
   - id: normalize_by_read_set
     type: boolean
-    default: true
+    default: false
     inputBinding:
       position: 10
       prefix: '--normalize_by_read_set'
@@ -140,5 +140,5 @@ label: Trinity assembles transcript sequences from Illumina RNA-Seq data.
 
 hints:
   - class: DockerRequirement
-    dockerImageId: trinityrnaseq:latest
+    #dockerImageId: trinityrnaseq:latest
     dockerPull: trinityrnaseq/trinityrnaseq
