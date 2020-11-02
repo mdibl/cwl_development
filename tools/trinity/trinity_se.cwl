@@ -5,7 +5,8 @@ $namespaces:
   s: 'http://schema.org/'
 
 requirements:
-  SchemaDefRequirement:
+  - class: InlineJavascriptRequirement
+  - class: SchemaDefRequirement
     types:
       - $import: trinity-ss_lib_type.yaml
       - $import: trinity-seq_type.yaml
@@ -106,6 +107,13 @@ outputs:
     type: File
     outputBinding:
       glob: "$(inputs.output_dir)/*Trinity.timing"
+  - id: console_log
+    type: stdout
+  - id: error_log
+    type: stderr
+
+stdout: $(inputs.output_dir + ".trinity_se.console.txt")
+stderr: $(inputs.output_dir + ".trinity_se.error.txt")
 
 doc: >
   "Trinity, developed at the Broad Institute and the Hebrew University of
@@ -124,6 +132,5 @@ label: Trinity assembles transcript sequences from Illumina RNA-Seq data.
 
 hints:
   - class: DockerRequirement
-    dockerImageId: trinityrnaseq:latest
+    #dockerImageId: trinityrnaseq:latest
     dockerPull: trinityrnaseq/trinityrnaseq
-  - class: InlineJavascriptRequirement

@@ -5,12 +5,13 @@ $namespaces:
   s: 'http://schema.org/'
 
 requirements:
-  SchemaDefRequirement:
+  - class: InlineJavascriptRequirement
+  - class: SchemaDefRequirement
     types:
       - $import: trinity-ss_lib_type.yaml
       - $import: trinity-seq_type.yaml
 
-baseCommand: [ Trinity, --full_cleanup ]
+baseCommand: [ Trinity ]
 inputs:
   - id: trinity_seq_type
     type: string
@@ -32,7 +33,7 @@ inputs:
       "execution of integrated qc trimming and adapter clipping"
   - id: trinity_max_mem
     type: string
-    default: 50G
+    default: 20G
     inputBinding:
       position: 3
       prefix: '--max_memory'
@@ -77,14 +78,15 @@ inputs:
     doc: >
       "number of CPUs to use by Trinity"
   - id: no_normalize_reads
-    type: boolean?
+    type: boolean
+    default: true
     inputBinding:
       position: 9
       prefix: '--no_normalize_reads'
     label: 'Do *not* run in silico normalization of reads. default: normalize reads'
   - id: normalize_by_read_set
     type: boolean
-    default: true
+    default: false
     inputBinding:
       position: 10
       prefix: '--normalize_by_read_set'
@@ -116,6 +118,13 @@ outputs:
     type: File
     outputBinding:
       glob: "$(inputs.output_dir)/*Trinity.timing"
+  - id: console_log
+    type: stdout
+  - id: error_log
+    type: stderr
+
+stdout: $(inputs.output_dir + ".trinity_pe.console.txt")
+stderr: $(inputs.output_dir + ".trinity_pe.error.txt")
 
 doc: >
   "Trinity, developed at the Broad Institute and the Hebrew University of
@@ -134,5 +143,5 @@ label: Trinity assembles transcript sequences from Illumina RNA-Seq data.
 
 hints:
   - class: DockerRequirement
-    dockerImageId: trinityrnaseq:latest
+    #dockerImageId: trinityrnaseq:latest
     dockerPull: trinityrnaseq/trinityrnaseq
