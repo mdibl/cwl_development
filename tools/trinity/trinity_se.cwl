@@ -15,7 +15,7 @@ baseCommand: [ Trinity ]
 inputs:
   - id: trinity_seq_type
     type: string
-    default: fa
+    default: fq
     inputBinding:
       position: 1
       prefix: '--seqType'
@@ -23,7 +23,8 @@ inputs:
     doc: >
       "type of reads: (fa or fq)"
   - id: trimmomatic
-    type: boolean?
+    type: boolean
+    default: true
     inputBinding:
       position: 2
       prefix: '--trimmomatic'
@@ -32,7 +33,7 @@ inputs:
       "execution of integrated qc trimming and adapter clipping"
   - id: trinity_max_mem
     type: string
-    default: 50G
+    default: 20G
     inputBinding:
       position: 3
       prefix: '--max_memory'
@@ -60,7 +61,7 @@ inputs:
       "Strand-specific RNA-Seq read orientation. if paired: RF or FR, if single:
       F or R. (dUTP method = RF). See web documentation"
   - id: trinity_cpu
-    type: int?
+    type: int
     default: 8
     inputBinding:
       position: 7
@@ -69,13 +70,15 @@ inputs:
     doc: >
       "number of CPUs to use by Trinity"
   - id: no_normalize_reads
-    type: boolean?
+    type: boolean
+    default: false
     inputBinding:
       position: 8
       prefix: '--no_normalize_reads'
     label: 'Do *not* run in silico normalization of reads. default: normalize reads'
   - id: normalize_by_read_set
-    type: boolean?
+    type: boolean
+    default: true
     inputBinding:
       position: 9
       prefix: '--normalize_by_read_set'
@@ -85,6 +88,7 @@ inputs:
     inputBinding:
       position: 10
       prefix: --output
+    label: 'Must include "trinity" in name'
 
 outputs:
   #- id: assembly_dir
@@ -132,5 +136,5 @@ label: Trinity assembles transcript sequences from Illumina RNA-Seq data.
 
 hints:
   - class: DockerRequirement
-    #dockerImageId: trinityrnaseq:latest
+    dockerImageId: trinityrnaseq:latest
     dockerPull: trinityrnaseq/trinityrnaseq

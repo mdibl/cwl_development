@@ -8,13 +8,13 @@ doc: >
 
 hints:
   DockerRequirement:
-    #dockerImageId: fastqc:0.11.9
+    dockerImageId: fastqc:0.11.9
     dockerPull: biocontainers/fastqc:v0.11.9_cv6
 
 requirements:
   - class: InlineJavascriptRequirement
 
-baseCommand: [fastqc]
+baseCommand: [ fastqc ]
 
 arguments:
   - prefix: --outdir
@@ -111,12 +111,10 @@ inputs:
     type: Directory?
     inputBinding:
       prefix: --dir
-  #output_prefix:
-    #label: "prefix to be added to output files"
-    #doc: "creates a tag to be added to output file names"
-    #type: string?
-    #default: ""
-    #inputBinding: null
+  output_prefix:
+    label: "prefix to be added to output files"
+    doc: "creates a tag to be added to output file names"
+    type: string
 
 outputs:
   fastqc_result:

@@ -79,14 +79,14 @@ inputs:
       "number of CPUs to use by Trinity"
   - id: no_normalize_reads
     type: boolean
-    default: true
+    default: false
     inputBinding:
       position: 9
       prefix: '--no_normalize_reads'
     label: 'Do *not* run in silico normalization of reads. default: normalize reads'
   - id: normalize_by_read_set
     type: boolean
-    default: false
+    default: true
     inputBinding:
       position: 10
       prefix: '--normalize_by_read_set'
@@ -96,6 +96,7 @@ inputs:
     inputBinding:
       position: 11
       prefix: --output
+    label: 'Must include "trinity" in name'
 
 outputs:
   #- id: assembly_dir
@@ -143,5 +144,5 @@ label: Trinity assembles transcript sequences from Illumina RNA-Seq data.
 
 hints:
   - class: DockerRequirement
-    #dockerImageId: trinityrnaseq:latest
+    dockerImageId: trinityrnaseq:latest
     dockerPull: trinityrnaseq/trinityrnaseq
