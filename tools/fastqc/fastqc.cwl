@@ -8,7 +8,7 @@ doc: >
 
 hints:
   DockerRequirement:
-    dockerImageId: fastqc:0.11.9
+    #dockerImageId: fastqc:0.11.9
     dockerPull: biocontainers/fastqc:v0.11.9_cv6
 
 requirements:
@@ -123,11 +123,11 @@ outputs:
     type: File
     outputBinding:
       glob: "*_fastqc.zip"
-  #console_log:
-    #type: stdout
-  #error_log:
-    #type: stderr
+  console_log:
+    type: stdout
+  error_log:
+    type: stderr
 
-#stdout: $(inputs.output_prefix + ".fastqc.console.txt")
-#stderr: $(inputs.output_prefix + ".fastqc.error.txt")
+stdout: $(inputs.output_prefix + ".fastqc.console.txt")
+stderr: $(inputs.output_prefix + ".fastqc.error.txt")
 
