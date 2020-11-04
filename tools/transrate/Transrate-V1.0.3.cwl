@@ -17,7 +17,7 @@ inputs:
     doc: >
       Assembly file(s) in FASTA format, comma-separated
   - id: left_fastq
-    format: 'edam:format_1930'
+    #format: 'edam:format_1930'
     type: File
     inputBinding:
       position: 2
@@ -27,7 +27,7 @@ inputs:
     doc: >
       Left reads file(s) in FASTQ format, comma-separated
   - id: right_fastq
-    format: 'edam:format_1930'
+    #format: 'edam:format_1930'
     type: File?
     inputBinding:
       position: 3
@@ -54,6 +54,13 @@ inputs:
     label: 'LOG file(s)'
     doc: >
       Log level. One of [error, info, warn, debug] (default: info)
+  - id: output_dir
+    type: Directory
+    inputBinding:
+      position: 5
+      prefix: '--output='
+  - id: folder_id
+    type: string
 outputs:
   - id: transrate_output_dir
     type: Directory
@@ -78,7 +85,7 @@ arguments:
   - position: 0
     prefix: '--output='
     separate: false
-    valueFrom: $(runtime.outdir)
+    valueFrom: $(runtime.outdir)/
 hints:
   - class: SoftwareRequirement
     packages:
@@ -86,7 +93,10 @@ hints:
         version:
           - 1.0.3
   - class: DockerRequirement
+    #dockerImageId: transrate:1.0.3
     dockerPull: 'arnaudmeng/transrate:1.0.3'
+requirements:
+  - class: InlineJavascriptRequirement
 $schemas:
   - 'http://edamontology.org/EDAM_1.20.owl'
   - 'https://schema.org/docs/schema_org_rdfa.html'

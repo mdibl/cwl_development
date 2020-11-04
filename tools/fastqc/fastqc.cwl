@@ -8,7 +8,7 @@ doc: >
 
 hints:
   DockerRequirement:
-    #dockerImageId: fastqc:0.11.9_cv6
+    dockerImageId: fastqc:0.11.9
     dockerPull: biocontainers/fastqc:v0.11.9_cv6
 
 requirements:
@@ -22,7 +22,7 @@ arguments:
 
 inputs:
   seqfile:
-    doc: "a sequence files"
+    doc: "a sequence file"
     type: File
     inputBinding:
       position: 100
@@ -112,20 +112,20 @@ inputs:
     type: Directory?
     inputBinding:
       prefix: --dir
-  output_prefix:
-    label: "prefix to be added to output files"
-    doc: "creates a tag to be added to output file names"
-    type: string
+  #output_prefix:
+    #label: "prefix to be added to output files"
+    #doc: "creates a tag to be added to output file names"
+    #type: string
 
 outputs:
-  fastqc_result:
-    type: File
+  zipped_results:
+    type: File[]
     outputBinding:
-      glob: "*_fastqc.zip"
-  fastqc_report:
-    type: File
+      glob: '*_fastqc.zip'
+  html_report:
+    type: File[]
     outputBinding:
-      glob: "*_fastqc.html"
+      glob: '*_fastqc.html'
 
 #stdout: $(inputs.output_prefix + ".fastqc.console.txt")
 #stderr: $(inputs.output_prefix + ".fastqc.error.txt")

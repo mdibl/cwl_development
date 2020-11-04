@@ -21,21 +21,27 @@ inputs:
   - id: output_dir
     type: string
     label: name of output file for Trinity (must include Trinity in name)
-  - id: output_prefix
-    type: string
 outputs:
-  - id: fastqc_result
+  - id: zipped_results
     outputSource:
-      - fastqc/fastqc_result
-    type: File
+      - fastqc/zipped_results
+    type: File[]
     'sbg:x': -119
     'sbg:y': -393
-  - id: fastqc_result_1
+  - id: html_report
     outputSource:
-      - fastqc_1/fastqc_result
-    type: File
+      - fastqc/html_report
+    type: File[]
+  - id: zipped_results_1
+    outputSource:
+      - fastqc_1/zipped_results
+    type: File[]
     'sbg:x': -112.94188690185547
     'sbg:y': 255
+  - id: html_report_1
+    outputSource:
+      - fastqc/html_report
+    type: File[]
   - id: trans_map
     outputSource:
       - trinity_pe/trans_map
@@ -80,10 +86,9 @@ steps:
     in:
       - id: seqfile
         source: right_reads
-      - id: output_prefix
-        source: output_prefix
     out:
-      - id: fastqc_result
+      - id: zipped_results
+      - id: html_report
     run: ../../tools/fastqc/fastqc.cwl
     label: 'FastQC: A quality control tool for high throughput sequence data'
     'sbg:x': -292.69537353515625
@@ -92,10 +97,9 @@ steps:
     in:
       - id: seqfile
         source: left_reads
-      - id: output_prefix
-        source: output_prefix
     out:
-      - id: fastqc_result
+      - id: zipped_results
+      - id: html_report
     run: ../../tools/fastqc/fastqc.cwl
     label: 'FastQC: A quality control tool for high throughput sequence data'
     'sbg:x': -260.49700927734375
