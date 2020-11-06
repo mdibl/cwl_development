@@ -15,7 +15,7 @@ hints:
     dockerImageId: trimgalore:0.6.5
     dockerPull: kerstenbreuer/trim_galore:0.4.4_1.14_0.11.7
 
-baseCommand: trim_galore
+baseCommand: [ trim_galore ]
 
 inputs:
   # main input
@@ -86,12 +86,6 @@ inputs:
     inputBinding:
       prefix: --stringency 
       position: 1
-  output_prefix:
-    label: "prefix to be added to output files"
-    doc: "creates a tag to be added to output file names"
-    type: string?
-    default: ""
-    inputBinding: null
 
 arguments:
 
@@ -207,6 +201,3 @@ outputs:
       items: File # since one or two matches (single/paired end)
     outputBinding:
       glob: "*fastqc.zip"
-
-stdout: $(inputs.output_prefix + ".trim_galore.console.txt")
-stderr: $(inputs.output_prefix + ".trim_galore.error.txt")

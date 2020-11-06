@@ -93,7 +93,7 @@ hints:
         #version:
           #- 1.0.3
   - class: DockerRequirement
-    dockerImageId: transrate:1.0.3
+    dockerImageId: arnaudmeng/transrate:1.0.3
     dockerPull: 'arnaudmeng/transrate:1.0.3'
 requirements:
   - class: InlineJavascriptRequirement

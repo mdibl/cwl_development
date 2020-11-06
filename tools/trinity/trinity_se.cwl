@@ -1,8 +1,8 @@
 class: CommandLineTool
 cwlVersion: v1.0
-$namespaces:
-  edam: 'http://edamontology.org/'
-  s: 'http://schema.org/'
+#$namespaces:
+  #edam: 'http://edamontology.org/'
+  #s: 'http://schema.org/'
 
 requirements:
   - class: InlineJavascriptRequirement
@@ -33,7 +33,7 @@ inputs:
       "execution of integrated qc trimming and adapter clipping"
   - id: trinity_max_mem
     type: string
-    default: 20G
+    default: 80G
     inputBinding:
       position: 3
       prefix: '--max_memory'
@@ -132,5 +132,5 @@ label: Trinity assembles transcript sequences from Illumina RNA-Seq data.
 
 hints:
   - class: DockerRequirement
-    dockerImageId: trinityrnaseq:latest
+    dockerImageId: trinityrnaseq/trinityrnaseq:latest
     dockerPull: trinityrnaseq/trinityrnaseq

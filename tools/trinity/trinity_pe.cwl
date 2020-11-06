@@ -33,7 +33,7 @@ inputs:
       "execution of integrated qc trimming and adapter clipping"
   - id: trinity_max_mem
     type: string
-    default: 60G
+    default: 80G
     inputBinding:
       position: 3
       prefix: '--max_memory'
