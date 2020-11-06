@@ -8,7 +8,7 @@ doc: >
 
 hints:
   DockerRequirement:
-    dockerImageId: fastqc:0.11.9
+    #dockerImageId: fastqc:0.11.9
     dockerPull: biocontainers/fastqc:v0.11.9_cv6
 
 requirements:
@@ -46,7 +46,7 @@ inputs:
   extract:
     doc: "If set then the zipped output file will be uncompressed in the same directory after it has been created. By default this option will be set if fastqc is run in non-interactive mode."
     type: boolean?
-    default: true
+    default: false
     inputBinding:
       prefix: --extract
   java:
