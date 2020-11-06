@@ -115,8 +115,8 @@ outputs:
     outputBinding:
       glob: $(inputs.transcriptsFile.basename).transdecoder.pep
 
-stdout: $(inputs.transcriptsFile.basename + ".TransDecoder.Predict.console.txt")
-stderr: $(inputs.transcriptsFile.basename + ".TransDecoder.Predict.error.txt")
+#stdout: $(inputs.transcriptsFile.basename + ".TransDecoder.Predict.console.txt")
+#stderr: $(inputs.transcriptsFile.basename + ".TransDecoder.Predict.error.txt")
 
 doc: >
   TransDecoder identifies candidate coding regions within transcript sequences,
@@ -158,7 +158,7 @@ requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
-    dockerImageId: transdecoder:5.5.0
+    #dockerImageId: transdecoder:5.5.0
     dockerPull: 'biocontainers/transdecoder:v5.0.1-2-deb_cv1'
 $schemas:
   - 'http://edamontology.org/EDAM_1.20.owl'

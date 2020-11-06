@@ -44,23 +44,17 @@ inputs:
     type: File[]
     inputBinding:
       position: 10
-  output_prefix:
-    label: "prefix to be added to output files"
-    doc: "creates a tag to be added to output file names"
-    type: string?
-    default: ""
-    inputBinding: null
 
 outputs:
   index_file:
     type: File
     outputBinding:
       glob: $(inputs.index_name)
-  console_log:
-    type: stdout
-  error_log:
-    type: stderr
+  #console_log:
+    #type: stdout
+  #error_log:
+    #type: stderr
 
-stdout: kallisto-index_console.txt
-stderr: kallisto-index_error.txt
+#stdout: kallisto-index_console.txt
+#stderr: kallisto-index_error.txt
 

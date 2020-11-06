@@ -8,7 +8,7 @@ doc: >
 
 hints:
   DockerRequirement:
-      dockerImageId: cdhit:4.8.1
+      #dockerImageId: cdhit:4.8.1
       dockerPull: mgrast/pipeline:4.03
 
 requirements:
@@ -63,5 +63,5 @@ outputs:
     outputBinding: 
       glob: $(inputs.output_prefix).clstr
 
-stdout: $(inputs.output_prefix + ".cd-hit-est.console.txt")
-stderr: $(inputs.output_prefix + ".cd-hit-est.error.txt")
+#stdout: $(inputs.output_prefix + ".cd-hit-est.console.txt")
+#stderr: $(inputs.output_prefix + ".cd-hit-est.error.txt")

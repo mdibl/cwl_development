@@ -1,9 +1,0 @@
-output_prefix: a_string  # type "string"
-output_dir: a_string  # type "string"
-trinity_ss_lib_type: a_string  # type "string"
-left_reads:  # type "File"
-    class: File
-    path: a/file/path
-right_reads:  # type "File"
-    class: File
-    path: a/file/path
