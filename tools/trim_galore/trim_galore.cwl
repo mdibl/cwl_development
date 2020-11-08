@@ -12,7 +12,7 @@ hints:
     coresMin: 1
     ramMin: 7000
   DockerRequirement:
-    #dockerImageId: trimgalore:0.6.5
+    dockerImageId: trimgalore:0.6.5
     dockerPull: kerstenbreuer/trim_galore:0.4.4_1.14_0.11.7
 
 baseCommand: [ trim_galore ]

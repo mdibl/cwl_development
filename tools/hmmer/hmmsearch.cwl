@@ -73,8 +73,6 @@ outputs:
     type: File
     outputBinding:
       glob: "domtbl.out"
-
-
 $schemas:
   - 'http://edamontology.org/EDAM_1.16.owl'
   - 'https://schema.org/docs/schema_org_rdfa.html'

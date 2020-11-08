@@ -5,9 +5,10 @@ doc: "STAR: Spliced Transcripts Alignment to a Reference. https://github.com/ale
 
 hints:
   DockerRequirement:
-    dockerPull: quay.io/biocontainers/star:2.6.0c--0
+    dockerImageId: star:2.7.5
+    dockerPull: quay.io/biocontainers/star:2.7.5c--0
 
-baseCommand: [ STAR ]
+baseCommand: [STAR]
 
 arguments:
   - valueFrom: "--runmode genomeGenerate"
@@ -73,11 +74,11 @@ outputs:
     outputBinding:
       glob: ./$(inputs.IndexName)/
 
-  console_log:
-    type: stdout
+  #console_log:
+    #type: stdout
 
-  error_log:
-    type: stderr
+  #error_log:
+    #type: stderr
 
-stdout: (inputs.IndexName).console.txt
-stderr: (inputs.IndexName).error.txt
+#stdout: (inputs.IndexName).console.txt
+#stderr: (inputs.IndexName).error.txt

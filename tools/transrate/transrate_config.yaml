@@ -1,5 +1,11 @@
 log_level: a_string  # type "string" (optional)
 n_threads: 0  # type "int" (optional)
+merge_assemblies:  # array of type "File" (optional)
+  - class: File
+    path: a/file/path
+reference:  # type "File" (optional)
+    class: File
+    path: a/file/path
 right_fastq:  # type "File" (optional)
     class: File
     path: a/file/path

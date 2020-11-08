@@ -6,6 +6,7 @@ doc: "HISAT2: graph-based alignment of next generation sequencing reads to a pop
 
 hints:
   DockerRequirement:
+    dockerImageId: hisat2:2.1.0
     dockerPull: quay.io/biocontainers/hisat2:2.1.0--py36h2d50403_1
 
 baseCommand: [hisat2]
@@ -71,11 +72,11 @@ outputs:
     outputBinding:
       glob: $(inputs.out_sam_name)
 
-  console_log:
-    type: stdout
-  error_log:
-    type: stderr
+  #console_log:
+    #type: stdout
+  #error_log:
+    #type: stderr
 
-stdout: hisat2_mapping_se_console.txt
-stderr: hisat2_mapping_se_error.txt
+#stdout: hisat2_mapping_se_console.txt
+#stderr: hisat2_mapping_se_error.txt
 

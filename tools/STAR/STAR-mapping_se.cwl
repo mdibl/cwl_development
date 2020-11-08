@@ -5,7 +5,8 @@ doc: "STAR: Spliced Transcripts Alignment to a Reference. https://github.com/ale
 
 hints:
   DockerRequirement:
-    dockerPull: quay.io/biocontainers/star:2.6.0c--0
+    dockerImageId: star:2.7.5
+    dockerPull: quay.io/biocontainers/star:2.7.5c--0
 
 requirements:
   - class: InlineJavascriptRequirement
@@ -196,10 +197,10 @@ outputs:
     outputBinding:
       glob: "*.out"
 
-  console_log:
-    type: stdout
-  error_log:
-    type: stderr
+  #console_log:
+    #type: stdout
+  #error_log:
+    #type: stderr
 
-stdout: star_mapping_se_console.txt
-stderr: star_mapping_se_error.txt
+#stdout: star_mapping_se_console.txt
+#stderr: star_mapping_se_error.txt

@@ -8,7 +8,7 @@ doc: >
 
 hints:
   DockerRequirement:
-    #dockerImageId: fastqc:0.11.9
+    dockerImageId: fastqc:0.11.9
     dockerPull: biocontainers/fastqc:v0.11.9_cv6
 
 requirements:

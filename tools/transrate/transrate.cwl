@@ -36,10 +36,24 @@ inputs:
     label: 'Right reads FASTQ file(s)'
     doc: >
       Right reads file(s) in FASTQ format, comma-separated
+  - id: reference
+    type: File?
+    inputBinding:
+      position: 4
+      prefix: '--reference='
+      separate: false
+    label: 'Compare assembly to reference set of proteins/transcripts'
+  - id: merge_assemblies
+    type: File[]?
+    inputBinding:
+      position: 5
+      prefix: 'merge-assemblies'
+      separate: false
+    label: 'Merge best contigs from multiple assemblies into file'
   - id: n_threads
     type: int?
     inputBinding:
-      position: 4
+      position: 6
       prefix: '--threads='
       separate: false
     label: 'Number of threads allocated'
@@ -93,7 +107,7 @@ hints:
         #version:
           #- 1.0.3
   - class: DockerRequirement
-    dockerImageId: arnaudmeng/transrate:1.0.3
+    dockerImageId: transrate:1.0.3
     dockerPull: 'arnaudmeng/transrate:1.0.3'
 requirements:
   - class: InlineJavascriptRequirement

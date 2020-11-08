@@ -8,6 +8,7 @@ requirements:
 
 hints:
   DockerRequirement:
+    dockerImageId: kallisto:0.46.1
     dockerPull: quay.io/biocontainers/kallisto:0.46.2--h4f7b962_1
   ResourceRequirement:
     ramMin: 4096

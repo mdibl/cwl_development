@@ -5,6 +5,7 @@ doc: "The hisat2-build indexer: hisat2-build builds a HISAT2 index from a set of
 
 hints:
   DockerRequirement:
+    dockerImageId: hisat2:2.1.0
     dockerPull: quay.io/biocontainers/hisat2:2.1.0--py36h2d50403_1
 
 baseCommand: [hisat2-build]
@@ -29,10 +30,10 @@ outputs:
     outputBinding:
       glob: "*"
 
-  console_log:
-    type: stdout
-  error_log:
-    type: stderr
+  #console_log:
+    #type: stdout
+  #error_log:
+    #type: stderr
 
-stdout: hisat2_index_console.txt
-stderr: hisat2_index_error.txt
+#stdout: hisat2_index_console.txt
+#stderr: hisat2_index_error.txt

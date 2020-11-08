@@ -4,9 +4,10 @@ $namespaces:
   edam: 'http://edamontology.org/'
   s: 'http://schema.org/'
 
-baseCommand: [ blastx ]
+baseCommand: [blastx]
 hints:
   DockerRequirement:
+    dockerImageId: ncbi/blast:latest
     dockerPull: ncbi/blast
 requirements:
 - class: EnvVarRequirement

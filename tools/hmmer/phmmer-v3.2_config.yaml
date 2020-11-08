@@ -1,0 +1,8 @@
+seqdb:  # type "File"
+    class: File
+    path: a/file/path
+seqFile:  # type "File"
+    class: File
+    path: a/file/path
+cpu: 0  # type "int" (optional)
+bitscoreThreshold: 0  # type "int" (optional)
