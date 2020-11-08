@@ -23,11 +23,11 @@ inputs:
   forward_reads:
     type: File
     inputBinding:
-      prefix: '--1'
+      prefix: '-1'
   reverse_reads:
     type: File
     inputBinding:
-      prefix: '--2'
+      prefix: '-2'
   threads:
     type: int
     inputBinding:
