@@ -18,6 +18,9 @@ inputs:
     label: trinity read orientation
     'sbg:x': -332.5685729980469
     'sbg:y': -189.6908416748047
+  - id: trinity_max_mem
+    type: string
+    label: trinity memory usage
   - id: output_dir
     type: string
     label: name of output file for Trinity (must include Trinity in name)
@@ -101,6 +104,8 @@ steps:
         source: trinity_ss_lib_type
       - id: output_dir
         source: output_dir
+      - id: trinity_max_mem
+        source: trinity_max_mem
     out:
       - id: assembled_contigs
       - id: trans_map
