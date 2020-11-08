@@ -1,6 +1,9 @@
-transcriptsFile:  # type "File"
+retainPredictMode: false  # type "boolean"
+retainPfamHits: false  # type "boolean"
+retainBlastpHits: false  # type "boolean"
+geneToTranscriptMap:  # type "File"
     class: File
     path: a/file/path
-geneToTranscriptMap:  # type "File"
+transcriptsFile:  # type "File"
     class: File
     path: a/file/path

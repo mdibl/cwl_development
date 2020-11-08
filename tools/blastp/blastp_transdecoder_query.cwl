@@ -37,6 +37,7 @@ inputs:
     label: 'number of threads for blastp'
   - id: max_target_seqs
     type: int
+    default: 5
     inputBinding:
       position: 3
       prefix: '-max_target_seqs'
@@ -44,6 +45,7 @@ inputs:
             norm default is 1, but Shad 2018 recommends 5'
   - id: outfmt
     type: int
+    default: 6
     inputBinding:
       position: 4
       prefix: '-outfmt'

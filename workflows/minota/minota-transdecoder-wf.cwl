@@ -1,34 +1,27 @@
 class: Workflow
 cwlVersion: v1.0
-id: minota_transdecoder_trinity_pe
-label: minota-transdecoder-trinity_pe
+id: minota_transdecoder_wf
+label: minota-transdecoder-wf
 $namespaces:
   sbg: 'https://www.sevenbridges.com/'
 inputs:
-  - id: geneToTranscriptMap
-    type: File
-    label: gene-to-transcript mapping
-    'sbg:x': -124.51541900634766
-    'sbg:y': -153.1806182861328
   - id: transcriptsFile
     type: File
     label: transcripts.fasta
-    'sbg:x': -102.1894302368164
-    'sbg:y': -285.7092590332031
+    'sbg:x': -88
+    'sbg:y': -238
+  - id: geneToTranscriptMap
+    type: File
+    label: gene-to-transcript mapping
+    'sbg:x': -189
+    'sbg:y': -119
   - id: retainBlastpHits
     type: boolean
-    label: blastp output in '-outfmt 6' format.
   - id: retainPfamHits
     type: boolean
-    label: Domain table output file from running hmmscan
-
+  - id: retainPredictMode
+    type: boolean
 outputs:
-  - id: peptide_sequences
-    outputSource:
-      - _trans_decoder__predict_v5/peptide_sequences
-    type: File
-    'sbg:x': 540.8766479492188
-    'sbg:y': -419.3568420410156
   - id: gff3_output
     outputSource:
       - _trans_decoder__predict_v5/gff3_output
@@ -47,21 +40,13 @@ outputs:
     type: File
     'sbg:x': 531.9779663085938
     'sbg:y': -49.77532958984375
+  - id: peptide_sequences
+    outputSource:
+      - _trans_decoder__predict_v5/peptide_sequences
+    type: File
+    'sbg:x': 504
+    'sbg:y': -471
 steps:
-  - id: _trans_decoder__long_orfs_v5
-    in:
-      - id: geneToTranscriptMap
-        source: geneToTranscriptMap
-      - id: transcriptsFile
-        source: transcriptsFile
-    out:
-      - id: workingDir
-    run: ../../tools/TransDecoder/TransDecoder.LongOrfs-v5.cwl
-    label: >-
-      TransDecoder.LongOrfs: Perl script, which extracts the long open reading
-      frames
-    'sbg:x': 76.15419006347656
-    'sbg:y': -115.50660705566406
   - id: _trans_decoder__predict_v5
     in:
       - id: longOpenReadingFrames
@@ -85,6 +70,20 @@ steps:
       regions
     'sbg:x': 250.99998474121094
     'sbg:y': -256.51983642578125
+  - id: _trans_decoder__long_orfs_v5
+    in:
+      - id: geneToTranscriptMap
+        source: geneToTranscriptMap
+      - id: transcriptsFile
+        source: transcriptsFile
+    out:
+      - id: workingDir
+    run: ../../tools/TransDecoder/TransDecoder.LongOrfs-v5.cwl
+    label: >-
+      TransDecoder.LongOrfs: Perl script, which extracts the long open reading
+      frames
+    'sbg:x': 20
+    'sbg:y': -106
 requirements:
   - class: SubworkflowFeatureRequirement
   - class: InlineJavascriptRequirement
