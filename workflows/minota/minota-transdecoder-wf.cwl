@@ -15,6 +15,13 @@ inputs:
     label: transcripts.fasta
     'sbg:x': -102.1894302368164
     'sbg:y': -285.7092590332031
+  - id: retainBlastpHits
+    type: boolean
+    label: blastp output in '-outfmt 6' format.
+  - id: retainPfamHits
+    type: boolean
+    label: Domain table output file from running hmmscan
+
 outputs:
   - id: peptide_sequences
     outputSource:
@@ -60,11 +67,11 @@ steps:
       - id: longOpenReadingFrames
         source: _trans_decoder__long_orfs_v5/workingDir
       - id: retainBlastpHits
-        default: true
+        default: false
       - id: retainPredictMode
-        default: true
+        default: false
       - id: retainPfamHits
-        default: true
+        default: false
       - id: transcriptsFile
         source: transcriptsFile
     out:
