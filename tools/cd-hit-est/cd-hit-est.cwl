@@ -56,7 +56,7 @@ outputs:
     doc: "Output fasta format file"
     type: File
     outputBinding: 
-      glob: $(inputs.output_prefix).fa
+      glob: $(inputs.output_prefix)
   outClstr:
     doc: "Output cluster mapping file"
     type: File
