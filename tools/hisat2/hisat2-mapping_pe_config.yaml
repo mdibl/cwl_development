@@ -11,5 +11,6 @@ fq2:  # type "File"
 fq1:  # type "File"
     class: File
     path: a/file/path
+transcriptome_mapping_only: true
 dta_cufflinks: true  # default value of type "boolean". (optional)
 dta: true  # default value of type "boolean". (optional)

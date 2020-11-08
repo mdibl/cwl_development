@@ -56,6 +56,12 @@ inputs:
     default: true
     inputBinding:
       prefix: --dta-cufflinks
+  transcriptome_mapping_only:
+    label: "Report only alignments within known transcripts"
+    type: boolean?
+    default: false
+    inputBinding:
+      prefix: --transcriptome-mapping-only
   time:
     label: "Print the wall-clock time"
     doc: "Print the wall-clock time required to load the index files and align the reads. This is printed to the 'standard error' ('stderr') filehandle."
