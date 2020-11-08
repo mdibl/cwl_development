@@ -1,0 +1,9 @@
+threads: 0  # type "int"
+rna_mode: false  # type "boolean"
+reverse_reads:  # type "File"
+    class: File
+    path: a/file/path
+memory: 0  # type "int"
+forward_reads:  # type "File"
+    class: File
+    path: a/file/path
