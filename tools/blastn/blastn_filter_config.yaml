@@ -1,0 +1,22 @@
+xdrop_gap: 0  # type "int" (optional)
+word_size: 0  # type "int" (optional)
+window_size: 0  # type "int" (optional)
+template_type: a_string  # type "string" (optional)
+template_length: 0  # type "int" (optional)
+task: a_string  # type "string" (optional)
+soft_masking: a_string  # type "string" (optional)
+reward: 0  # type "int" (optional)
+query:  # type "File"
+    class: File
+    path: a/file/path
+perc_identity: 0.1  # type "double" (optional)
+penalty: 0  # type "int" (optional)
+outfmt: 6  # default value of type "string". (optional)
+no_greedy: false  # type "boolean" (optional)
+gapopen: 0  # type "int" (optional)
+gapextend: 0  # type "int" (optional)
+evalue: 0.1  # type "double" (optional)
+dust: a_string  # type "string" (optional)
+db: a_string  # type "string"
+best_hit_score_edge: 0.1  # type "double" (optional)
+best_hit_overhang: 0.1  # type "double" (optional)
