@@ -1,4 +1,8 @@
-configFile:
+mode: assessment_modes_enum_value  # enum; valid values: "geno", "prot", "tran"
+outputName: a_string  # type "string"
+lineage:  # type "Directory"
+    class: Directory
+    path: a/directory/path
+sequenceFile:  # type "File"
     class: File
-    path: ./config.ini
-outputName: Homarus_americanus_GFDA01.1.fsa_nt
+    path: a/file/path

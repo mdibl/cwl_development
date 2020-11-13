@@ -13,28 +13,65 @@ requirements:
   - class: SchemaDefRequirement
     types:
       - $import: BUSCO-assessment_modes.yaml
-  - class: InitialWorkDirRequirement
-    listing: $(inputs.configFile)
+  # class: InitialWorkDirRequirement
+    #listing: $(inputs.configFile)
 
 baseCommand: [ busco ]
 
 inputs:
-  - id: configFile
+  - id: sequenceFile
     type: File
     inputBinding:
       position: 0
-      prefix: --config
+      prefix: '--in'
+    label: Sequence file in FASTA format
+    doc: |
+      Input sequence file in FASTA format (not compressed/zipped!).
+      Can be an assembled genome (genome mode) or transcriptome (DNA,
+      transcriptome mode), or protein sequences from an annotated gene set
+      (proteins mode).
+      NB: select just one transcript/protein per gene for your input,
+      otherwise they will appear as 'Duplicated' matches.
   
-  #- id: outputName
-    #type: string
+  - id: lineage
+    type: Directory
+    inputBinding:
+      position: 0
+      prefix: '--lineage_dataset'
+    label: Location of the BUSCO lineage data to use (e.g. fungi_odb10)
+    doc: |
+      Specify location of the BUSCO lineage data to be used.
+      Visit http://busco.ezlab.org/ for available lineages.
+
+  #- id: configFile
+    #type: File
     #inputBinding:
       #position: 0
-      #prefix: '--out'
-    #label: Name to use for the run and all temporary files (appended)
-    #doc: |
-      #Give your analysis run a recognisable short name.
-      #Output folders and files will be labelled (prepended) with this name.
-      #WARNING: do not provide a path.
+      #prefix: --config
+  
+  - id: outputName
+    type: string
+    inputBinding:
+      position: 0
+      prefix: '--out'
+    label: Name to use for the run and all temporary files (appended)
+    doc: |
+      Give your analysis run a recognisable short name.
+      Output folders and files will be labelled (prepended) with this name.
+      WARNING: do not provide a path.
+
+  - id: mode
+    type: BUSCO-assessment_modes.yaml#assessment_modes
+    inputBinding:
+      position: 0
+      prefix: '--mode'
+    label: 'Sets the assessment MODE: genome, proteins, transcriptome'
+    doc: |
+      Specify which BUSCO analysis mode to run.
+      There are three valid modes:
+      - geno or genome, for genome assemblies (DNA).
+      - tran or transcriptome, for transcriptome assemblies (DNA).
+      - prot or proteins, for annotated gene sets (protein).
 
 outputs: 
   - id: blastOutput
