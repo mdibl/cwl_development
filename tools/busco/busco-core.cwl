@@ -1,21 +1,6 @@
 class: CommandLineTool
 cwlVersion: v1.0
 
-hints:
-  - class: DockerRequirement
-    dockerPull: 'quay.io/biocontainers/busco:4.0.6--pyr36_0'
-    #dockerPull: 'ezlabgva/busco:v5.beta.1_cv1'
-
-requirements:
-  - class: ResourceRequirement
-    coresMin: 1
-  - class: InlineJavascriptRequirement
-  - class: SchemaDefRequirement
-    types:
-      - $import: BUSCO-assessment_modes.yaml
-  # class: InitialWorkDirRequirement
-    #listing: $(inputs.configFile)
-
 baseCommand: [ busco ]
 
 inputs:
@@ -34,7 +19,7 @@ inputs:
       otherwise they will appear as 'Duplicated' matches.
   
   - id: lineage
-    type: Directory
+    type: string
     inputBinding:
       position: 0
       prefix: '--lineage_dataset'
@@ -43,11 +28,11 @@ inputs:
       Specify location of the BUSCO lineage data to be used.
       Visit http://busco.ezlab.org/ for available lineages.
 
-  #- id: configFile
-    #type: File
-    #inputBinding:
-      #position: 0
-      #prefix: --config
+ # - id: configFile
+ #   type: File
+ #   inputBinding:
+ #     position: 0
+ #     prefix: --config
   
   - id: outputName
     type: string
@@ -146,13 +131,12 @@ requirements:
   - class: SchemaDefRequirement
     types:
       - $import: BUSCO-assessment_modes.yaml
-  - class: InitialWorkDirRequirement
-    listing: $(inputs.configFile)
+  #- class: InitialWorkDirRequirement
+   # listing: $(inputs.configFile)
 hints:
   - class: DockerRequirement
     dockerImageId: ezlabgva/busco:v4.1.3_cv1
     #dockerPull: 'quay.io/biocontainers/busco:4.0.6--pyr36_0'
-    #dockerPull: 'ezlabgva/busco:v5.beta.1_cv1'
   - class: gx:interface
     gx:inputs:
       - gx:name: blastSingleCore
