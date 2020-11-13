@@ -66,7 +66,7 @@ outputs:
       File: coordinates_XXXX.txt = locations of BUSCO matches (genome mode)
     type: Directory
     outputBinding:
-      glob: run_$(inputs.outputName)/blast_output
+      glob: $(inputs.outputName)/blast_output
   - id: fullTable
     doc: >
       Contains the complete results in a tabular format with scores and lengths
@@ -74,18 +74,18 @@ outputs:
       (for transcriptome or proteins mode).
     type: File
     outputBinding:
-      glob: run_$(inputs.outputName)/full_table_*.tsv
+      glob: $(inputs.outputName)/full_table_*.tsv
     format: 'iana:text/tab-separated-values'
   - id: hmmerOutput
     label: Tabular format HMMER output of searches with BUSCO HMMs
     type: Directory
     outputBinding:
-      glob: run_$(inputs.outputName)/hmmer_output
+      glob: $(inputs.outputName)/hmmer_output
   - id: missingBUSCOs
     label: Contains a list of missing BUSCOs
     type: File
     outputBinding:
-      glob: run_$(inputs.outputName)/missing_busco_list_*.tsv
+      glob: $(inputs.outputName)/missing_busco_list_*.tsv
     format: 'iana:text/tab-separated-values'
   - id: shortSummary
     doc: |
@@ -93,14 +93,14 @@ outputs:
       Also gives a brief breakdown of the metrics.
     type: File
     outputBinding:
-      glob: run_$(inputs.outputName)/short_summary_*.txt
+      glob: $(inputs.outputName)/short_summary_*.txt
   - id: translatedProteins
     label: >-
       Transcript sequence translations, only created during transcriptome
       assessment
     type: Directory
     outputBinding:
-      glob: run_$(inputs.outputName)/translated_proteins
+      glob: $(inputs.outputName)/translated_proteins
 doc: >
   BUSCO v4 provides quantitative measures for the assessment of genome assembly,
   gene set, and transcriptome completeness, based on evolutionarily-informed expectations
