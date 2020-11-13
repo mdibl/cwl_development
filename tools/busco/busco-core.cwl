@@ -116,3 +116,98 @@ outputs:
     type: Directory
     outputBinding:
       glob: run_$(inputs.outputName)/translated_proteins
+doc: >
+  BUSCO v4 provides quantitative measures for the assessment of genome assembly,
+  gene set, and transcriptome completeness, based on evolutionarily-informed expectations
+  of gene content from near-universal single-copy orthologs selected from OrthoDB v9.
+  BUSCO assessments are implemented in open-source software, with a large
+  selection of lineage-specific sets of Benchmarking Universal Single-Copy Orthologs. These
+  conserved orthologs are ideal candidates for large-scale phylogenomics studies, and the
+  annotated BUSCO gene models built during genome assessments provide a comprehensive gene
+  predictor training set for use as part of genome annotation pipelines.
+
+  Please visit http://busco.ezlab.org/ for full documentation.
+
+  The BUSCO assessment software distribution is available from the public GitLab
+  project:
+  https://gitlab.com/ezlab/busco where it can be downloaded or cloned using a
+  git client (git clone https://gitlab.com/ezlab/busco.git). We encourage users to opt for
+  the git client option in order to facilitate future updates.
+
+  BUSCO is written for Python 3.x and Python 2.7+. It runs with the standard
+  packages. We recommend using Python3 when available.
+label: >-
+  Assesses genome assembly and annotation completeness with single-copy
+  orthologs
+requirements:
+  - class: ResourceRequirement
+    coresMin: 1
+  - class: InlineJavascriptRequirement
+  - class: SchemaDefRequirement
+    types:
+      - $import: BUSCO-assessment_modes.yaml
+  - class: InitialWorkDirRequirement
+    listing: $(inputs.configFile)
+hints:
+  - class: DockerRequirement
+    dockerImageId: ezlabgva/busco:v4.1.3_cv1
+    #dockerPull: 'quay.io/biocontainers/busco:4.0.6--pyr36_0'
+    #dockerPull: 'ezlabgva/busco:v5.beta.1_cv1'
+  - class: gx:interface
+    gx:inputs:
+      - gx:name: blastSingleCore
+        gx:type: boolean
+        gx:optional: True
+      - gx:name: cpu
+        gx:type: integer
+        gx:optional: True
+      - gx:name: evalue
+        gx:type: float
+        gx:optional: True
+      - gx:name: force
+        gx:type: boolean
+        gx:optional: True
+      - gx:name: help
+        gx:type: boolean
+        gx:optional: True
+      - gx:name: lineage
+        gx:type: data
+      - gx:name: long
+        gx:type: boolean
+        gx:optional: True
+      - gx:name: mode
+        gx:value: tran
+        gx:type: text
+      - gx:name: outputName
+        gx:value: TEST
+        gx:type: text
+      - gx:name: quiet
+        gx:type: boolean
+        gx:optional: True
+      - gx:name: regionLimit
+        gx:type: integer
+        gx:optional: True
+      - gx:name: restart
+        gx:type: boolean
+        gx:optional: True
+      - gx:name: sequenceFile
+        gx:format: 'txt'
+        gx:type: data
+      - gx:name: species
+        gx:type: text
+        gx:optional: True
+      - gx:name: tarzip
+        gx:type: boolean
+        gx:optional: True
+      - gx:name: tempPath
+        gx:type: data
+        gx:optional: True
+      - gx:name: version
+        gx:type: boolean
+        gx:optional: True
+$schemas:
+  - 'http://edamontology.org/EDAM_1.20.owl'
+  - 'https://schema.org/docs/schema_org_rdfa.html'
+s:license: "https://www.apache.org/licenses/LICENSE-2.0"
+s:copyrightHolder: "EMBL - European Bioinformatics Institute, 2018"
+s:author: "Arnaud Meng, Maxim Scheremetjew"
