@@ -2,44 +2,48 @@ cwlVersion: v1.0
 class: CommandLineTool
 doc: search sequence(s) against a profile database
 hints:
-    DockerRequirement:
-        dockerImageId: hmmer:3.3.1
-        dockerPull: comics/hmmer:latest
+  DockerRequirement:
+    dockerImageId: hmmer:3.3.1
+    dockerPull: comics/hmmer:latest
 baseCommand: hmmscan
 
 requirements:
-    InitialWorkDirRequirement:
-        listing:
-            - $(inputs.hmmdb)
-            - $(inputs.h3m)
-            - $(inputs.h3i)
-            - $(inputs.h3f)
-            - $(inputs.h3p)
-
-stdout: $(inputs.output)
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.hmmdb_files)
+  
 inputs:
-    hmmdb:
-        type: File
-        inputBinding:
-            position: 1
-            valueFrom: $(self.basename)
-    h3m:
-        type: File
-    h3i:
-        type: File
-    h3f:
-        type: File
-    h3p:
-        type: File
-    seqfile:
-        type: File
-        inputBinding:
-            position: 2
-    cpu:
-        type: int?
-        inputBinding:
-            position: 0
-            prefix: --cpu
+  hmmdb_files:
+    type: File[]
+  hmmdb_label:
+    type: string
+    inputBinding:
+      position: 18
+  seqfile:
+    type: File
+    inputBinding:
+      position: 20
+  cpu:
+    type: int?
+    inputBinding:
+      position: 0
+      prefix: --cpu
+  output_prefix:
+    type: string?
+    default: hmmscan_out
+
+arguments:
+  - prefix: -o
+    valueFrom: $(inputs.output_prefix + ".hmmscan.out.txt")
+  - prefix: --domtblout
+    valueFrom: $(inputs.output_prefix + ".hmmscan.dom.txt")
+  - prefix: --tblout
+    valueFrom: $(inputs.output_prefix + ".hmmscan.tbl.txt")
+
+
 outputs:
-    output:
-        type: stdout
+  output_files:
+    type: File[]
+    outputBinding:
+      glob: "*hmmscan.*.txt"
