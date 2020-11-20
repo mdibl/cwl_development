@@ -16,7 +16,7 @@ hints:
   - class: DockerRequirement
     dockerImageId: corset:1.0.9
 
-baseCommand: [corset]
+baseCommand: [ corset ]
 
 inputs:
   input_bam_files:
@@ -35,7 +35,7 @@ inputs:
 #        "Range must be between 0 and 1 (0.4,0.5), if more than one distance threshold
 #        is given, the output filenames will be in the form: counts-<threshold>.txt and
 #        clusters-<thresholds>.txt"
-    type: double
+    type: double?
     default: 0.3
     inputBinding:
       position: 1
@@ -44,7 +44,7 @@ inputs:
   log_likelihood_threshold:
     label: "Value used for thresholding log likelihood ratio"
 #    doc: >
-#        "Default value will depoend on number of degrees of freedom (number of groups -1)
+#        "Default value will depend on number of degrees of freedom (number of groups -1)
 #        By default D = 17.5 + 2.5 *ndf, corresponds approximately to p-val threshold of 
 #        10^-5, when there are fewer than 10 groups"
     type: double?
@@ -60,17 +60,17 @@ inputs:
       position: 3
       prefix: -m
   
-  #grouping_specification:
-    #label: "Specifies which samples belong to which experimental groups"
-    #doc: >
-      #"The parameter must be a comma separated list (no spaces), with the
-	    #groupings given in the same order as the bam filename. For example:
-	    #-g Group1,Group1,Group2,Group2 etc. If this option is not used, each sample
-	    #is treated as an independent experimental group"
-    #type: string?
-    #inputBinding:
-      #position: 4
-      #prefix: -g
+  grouping_specification:
+    label: "Specifies which samples belong to which experimental groups"
+#    doc: >
+#      "The parameter must be a comma separated list (no spaces), with the
+#	    groupings given in the same order as the bam filename. For example:
+#	    -g Group1,Group1,Group2,Group2 etc. If this option is not used, each sample
+#	    is treated as an independent experimental group"
+    type: string?
+    inputBinding:
+      position: 4
+      prefix: -g
   
   output_prefix:
     label: "Prefix for output filenames"
@@ -103,7 +103,7 @@ inputs:
       prefix: -n
   
   summarize_read_alignments:
-    label: "Output a file summarising the read alignments"
+    label: "Output a file summarizing the read alignments"
 #   doc: >
 #      "This may be used if you
 #	    would like to read the bam files and run the clustering in seperate runs
