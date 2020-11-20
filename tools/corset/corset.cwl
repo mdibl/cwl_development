@@ -35,7 +35,7 @@ inputs:
 #        "Range must be between 0 and 1 (0.4,0.5), if more than one distance threshold
 #        is given, the output filenames will be in the form: counts-<threshold>.txt and
 #        clusters-<thresholds>.txt"
-    type: double?
+    type: double
     default: 0.3
     inputBinding:
       position: 1
@@ -135,7 +135,7 @@ inputs:
     label: "If running with -i corset or salmon_eq_classes, this will filter out a link between contigs"
 #   doc: >
 #      "if the link is supported by less than this many reads. Default: 1 (no filtering)"
-    type: int
+    type: int?
     default: 1
     inputBinding:
       position: 10
@@ -154,11 +154,11 @@ outputs:
   counts_file:
     type: File
     outputBinding:
-      glob: $(inputs.output_prefix)-counts.txt
+      glob: $(inputs.output_prefix).counts.txt
   clusters_file:
     type: File
     outputBinding:
-      glob: $(inputs.output_prefix)-clusters.txt
+      glob: $(inputs.output_prefix).clusters.txt
 
 
 
