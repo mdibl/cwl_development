@@ -1,0 +1,6 @@
+memory: 0
+rna_mode: null
+single_reads:
+    class: File
+    path: default/file/path
+threads: 0

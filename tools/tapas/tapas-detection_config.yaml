@@ -1,0 +1,9 @@
+read_length: 0  # type "int"
+penalty_value: 0.1  # type "double" (optional)
+output_file_name: a_string  # type "string"
+coverage_file_name:  # type "File"
+    class: File
+    path: a/file/path
+annotation_file_name:  # type "File"
+    class: File
+    path: a/file/path

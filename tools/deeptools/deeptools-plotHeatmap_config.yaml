@@ -1,0 +1,7 @@
+sample_id: a_string  # type "string"
+matrixFile:  # type "File"
+    class: File
+    path: a/file/path
+kmeans: 0  # type "int" (optional)
+interpolationMethod: a_string  # type "string"
+dpi: false  # type "boolean" (optional)

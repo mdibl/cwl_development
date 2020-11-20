@@ -1,0 +1,11 @@
+cpu: 0
+end: null
+input_list:
+    class: File
+    path: default/file/path
+motif_length: default_string
+output_dir:
+    class: Directory
+    path: default/directory/path
+promoter_set: default_string
+start: null

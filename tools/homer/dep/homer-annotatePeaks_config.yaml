@@ -1,0 +1,14 @@
+export_heatmap: null
+hist_bin_size: 0
+hist_width: null
+histogram_filename: default_string
+norm_fpkm: null
+norm_fragment_size: null
+norm_raw: null
+norm_tag_count: null
+peak_file:
+    class: File
+    path: default/file/path
+strand: null
+tag_folders: null
+threads: null

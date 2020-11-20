@@ -1,0 +1,8 @@
+mode: assessment_modes_enum_value  # enum; valid values: "geno", "prot", "tran"
+outputName: a_string  # type "string"
+lineage:  # type "Directory"
+    class: Directory
+    path: a/directory/path
+sequenceFile:  # type "File"
+    class: File
+    path: a/file/path

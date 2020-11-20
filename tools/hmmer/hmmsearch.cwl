@@ -3,7 +3,10 @@ cwlVersion: v1.0
 $namespaces:
   edam: 'http://edamontology.org/'
   s: 'http://schema.org/'
-
+hints:
+    DockerRequirement:
+        dockerImageId: hmmer:3.3.1
+        dockerPull: comics/hmmer:latest
 baseCommand: [ hmmsearch ]
 inputs:
   - id: tblout
@@ -70,8 +73,6 @@ outputs:
     type: File
     outputBinding:
       glob: "domtbl.out"
-
-
 $schemas:
   - 'http://edamontology.org/EDAM_1.16.owl'
   - 'https://schema.org/docs/schema_org_rdfa.html'

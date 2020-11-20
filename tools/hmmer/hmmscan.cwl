@@ -1,28 +1,49 @@
-class: CommandLineTool
 cwlVersion: v1.0
-$namespaces:
-  edam: 'http://edamontology.org/'
-  s: 'http://schema.org/'
+class: CommandLineTool
+doc: search sequence(s) against a profile database
+hints:
+  DockerRequirement:
+    dockerImageId: hmmer:3.3.1
+    dockerPull: comics/hmmer:latest
+baseCommand: hmmscan
 
-baseCommand: [ hmmscan ]
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.hmmdb_files)
+  
 inputs:
-	-	id: cpu_count
-		type: int
-		default: 12
-		inputBinding:
-			position: 1
-			prefix: '--cpu'
-		label: 'number of cpu cores available'
-	-	id:	domtblout
-		type: File
-		inputBinding:
-			position: 2
-			prefix: '--domtblout'
-		label: 'produces domain hits table'
+  hmmdb_files:
+    type: File[]
+  hmmdb_label:
+    type: string
+    inputBinding:
+      position: 18
+  seqfile:
+    type: File
+    inputBinding:
+      position: 20
+  cpu:
+    type: int?
+    inputBinding:
+      position: 0
+      prefix: --cpu
+  output_prefix:
+    type: string?
+    default: hmmscan_out
 
-  $schemas:
-  - 'http://edamontology.org/EDAM_1.16.owl'
-  - 'https://schema.org/docs/schema_org_rdfa.html'
-s:license: "https://www.apache.org/licenses/LICENSE-2.0"
-s:copyrightHolder: "MDI Biological Laboratory, 2019"
-s:author: "Nathaniel Maki"
+arguments:
+  - prefix: -o
+    valueFrom: $(inputs.output_prefix + ".hmmscan.out.txt")
+  - prefix: --domtblout
+    valueFrom: $(inputs.output_prefix + ".hmmscan.dom.txt")
+  - prefix: --tblout
+    valueFrom: $(inputs.output_prefix + ".hmmscan.tbl.txt")
+
+
+outputs:
+  output_files:
+    type: File[]
+    outputBinding:
+      glob: "*hmmscan.*.txt"

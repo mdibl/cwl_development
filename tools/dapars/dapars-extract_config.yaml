@@ -1,0 +1,9 @@
+output_file:  # type "File"
+    class: File
+    path: a/file/path
+gene_symbol_file:  # type "File"
+    class: File
+    path: a/file/path
+gene_bed_file:  # type "File"
+    class: File
+    path: a/file/path

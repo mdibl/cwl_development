@@ -1,9 +1,0 @@
-input_fastq:
-  class: File
-  path: "/compbio/analysis/nmaki/trim_galore-test/KO_cort1_trimmed.fq"
-rsem_index_dir:
-  class: Directory
-  path: "/compbio/analysis/nmaki/RSEM-index-test"
-rsem_index_prefix: "danio_rerio-rsem_index"
-rsem_output_prefix: "KO_cort1_trimmed_rsem"
-nthreads: 8 

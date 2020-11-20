@@ -1,0 +1,5 @@
+sample_id: a_string  # type "string"
+extendReads: 0  # type "int" (optional)
+bam:  # type "File"
+    class: File
+    path: a/file/path

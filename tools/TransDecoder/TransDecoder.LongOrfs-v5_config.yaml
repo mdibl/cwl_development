@@ -1,0 +1,9 @@
+transcriptsFile:  # type "File"
+    class: File
+    path: a/file/path
+strandSpecific: false  # type "boolean" (optional)
+minimumProteinLength: 0  # type "int" (optional)
+geneticCode: genetic_codes_enum_value  # enum; valid values: "universal", "Euplotes", "Tetrahymena", "Candida", "Acetabularia", "Mitochondrial-Canonical", "Mitochondrial-Vertebrates", "Mitochondrial-Arthropods", "Mitochondrial-Echinoderms", "Mitochondrial-Molluscs", "Mitochondrial-Ascidians", "Mitochondrial-Nematodes", "Mitochondrial-Platyhelminths", "Mitochondrial-Yeasts", "Mitochondrial-Euascomycetes", "Mitochondrial-Protozoans" (optional)
+geneToTranscriptMap:  # type "File" (optional)
+    class: File
+    path: a/file/path

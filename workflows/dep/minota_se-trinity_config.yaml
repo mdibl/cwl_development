@@ -1,0 +1,7 @@
+seq_type: a_string  # type "string"
+output_dir: a_string  # type "string"
+max_memory: a_string  # type "string"
+outName: a_string  # type "string"
+fq:  # type "File"
+    class: File
+    path: a/file/path

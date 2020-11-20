@@ -1,0 +1,9 @@
+retainPredictMode: false  # type "boolean"
+retainPfamHits: false  # type "boolean"
+retainBlastpHits: false  # type "boolean"
+geneToTranscriptMap:  # type "File"
+    class: File
+    path: a/file/path
+transcriptsFile:  # type "File"
+    class: File
+    path: a/file/path

@@ -1,0 +1,6 @@
+word: 9  # default value of type "int". (optional)
+output_prefix: a_string  # type "string"
+input:  # type "File"
+    class: File
+    path: a/file/path
+identity: 0.97  # default value of type "float". (optional)

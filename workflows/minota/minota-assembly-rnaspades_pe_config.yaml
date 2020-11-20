@@ -1,0 +1,10 @@
+threads: 0  # type "int"
+rna_mode: false  # type "boolean"
+memory: 0  # type "int"
+output_prefix: a_string  # type "string"
+seqfile_1:  # type "File"
+    class: File
+    path: a/file/path
+seqfile:  # type "File"
+    class: File
+    path: a/file/path

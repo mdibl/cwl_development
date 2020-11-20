@@ -1,0 +1,12 @@
+secondary_condition:  # array of type "File"
+  - class: File
+    path: a/file/path
+primary_condition:  # array of type "File"
+  - class: File
+    path: a/file/path
+output_file_name: a_string  # type "string"
+differential_analysis_type: a_string  # type "string"
+cutoff_value: 70  # default value of type "int".
+annotation_file_name:  # type "File"
+    class: File
+    path: a/file/path

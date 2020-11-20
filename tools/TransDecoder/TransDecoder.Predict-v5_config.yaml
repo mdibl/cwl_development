@@ -1,0 +1,14 @@
+geneticCode: null
+longOpenReadingFrames:
+    class: Directory
+    path: default/directory/path
+noRefineStarts: null
+retainBlastpHits: null
+retainLongOrfsLength: null
+retainLongOrfsMode: null
+retainPfamHits: null
+singleBestOnly: null
+train: null
+transcriptsFile:
+    class: File
+    path: default/file/path

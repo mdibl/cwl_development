@@ -1,5 +1,5 @@
 cwlVersion: v1.0
-class: CommandLineTools
+class: CommandLineTool
 label: "A tool that conducts differential analysis between two biological samples"
 doc: >
     "Accoring to the central dogma of molecular biology, a pre-mRNA is synthesized from the coding sequence of a gene during the transcriptional process. 
@@ -61,8 +61,8 @@ inputs:
   
   output_file_name:
     label: "Output file name is given using this option"
-    doc: "Default: for differential APA site analysis "diff_result_final.txt", 
-					for shortening/lengthening event analysis: "decision_output.txt""
+    doc: "Default: for differential APA site analysis diff_result_final.txt, 
+					for shortening/lengthening event analysis: decision_output.txt"
     type: string
     inputBinding:
       position: 6

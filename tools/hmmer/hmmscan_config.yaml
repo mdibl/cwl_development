@@ -1,0 +1,19 @@
+seqfile:  # type "File"
+    class: File
+    path: a/file/path
+hmmdb:  # type "File"
+    class: File
+    path: a/file/path
+h3p:  # type "File"
+    class: File
+    path: a/file/path
+h3m:  # type "File"
+    class: File
+    path: a/file/path
+h3i:  # type "File"
+    class: File
+    path: a/file/path
+h3f:  # type "File"
+    class: File
+    path: a/file/path
+cpu: 0  # type "int" (optional)

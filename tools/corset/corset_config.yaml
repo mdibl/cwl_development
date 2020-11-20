@@ -1,0 +1,14 @@
+transcript_filter: 10  # default value of type "int".
+summarize_read_alignments: false  # type "boolean"
+overwrite_files: false  # type "boolean"
+output_prefix: a_string  # type "string"
+log_likelihood_threshold: 0.1  # type "double" (optional)
+link_contig_filter: 1  # default value of type "int". (optional)
+input_filetype: bam  # default value of type "string".
+input_bam_files:  # array of type "File"
+  - class: File
+    path: a/file/path
+#header_name: a_string  # type "string" (optional)
+#grouping_specification: a_string  # type "string" (optional)
+filter_reads: 0  # type "int" (optional)
+distance_thresholds: 0.3  # default value of type "double".

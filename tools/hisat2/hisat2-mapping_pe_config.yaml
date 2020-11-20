@@ -1,0 +1,16 @@
+time: true  # default value of type "boolean". (optional)
+out_sam_name: out.sam  # default value of type "string". (optional)
+nthreads: 0  # type "int"
+hisat2_idx_basename: a_string  # type "string"
+hisat2_idx_basedir:  # type "Directory"
+    class: Directory
+    path: a/directory/path
+fq2:  # type "File"
+    class: File
+    path: a/file/path
+fq1:  # type "File"
+    class: File
+    path: a/file/path
+transcriptome_mapping_only: true
+dta_cufflinks: true  # default value of type "boolean". (optional)
+dta: true  # default value of type "boolean". (optional)

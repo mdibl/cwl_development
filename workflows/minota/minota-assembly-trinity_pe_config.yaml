@@ -1,0 +1,10 @@
+output_prefix: a_string  # type "string" for cd-hit-est
+output_dir: a_string  # type "string" for trinity output
+trinity_max_mem: a_string  # type "string"
+trinity_ss_lib_type: a_string  # type "string"
+seqfile_1:  # type "File"
+    class: File
+    path: a/file/path
+seqfile:  # type "File"
+    class: File
+    path: a/file/path

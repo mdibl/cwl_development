@@ -1,0 +1,30 @@
+seqfile:  # type "File"
+    class: File
+    path: a/file/path
+quiet: false  # type "boolean" (optional)
+output_prefix: a_string  # type "string"
+nthreads: 8  # default value of type "int".
+nogroup: true  # default value of type "boolean". (optional)
+nofilter: false  # type "boolean" (optional)
+noextract: true  # default value of type "boolean". (optional)
+nano: false  # type "boolean" (optional)
+min_length: 0  # type "int" (optional)
+limits:  # type "File" (optional)
+    class: File
+    path: a/file/path
+kmers: 0  # type "int" (optional)
+java:  # type "File" (optional)
+    class: File
+    path: a/file/path
+input_format: a_string  # type "string" (optional)
+extract: false  # type "boolean" (optional)
+dir:  # type "Directory" (optional)
+    class: Directory
+    path: a/directory/path
+contaminants:  # type "File" (optional)
+    class: File
+    path: a/file/path
+casava: false  # type "boolean" (optional)
+adapters:  # type "File" (optional)
+    class: File
+    path: a/file/path

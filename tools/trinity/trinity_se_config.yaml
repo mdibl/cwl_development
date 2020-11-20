@@ -1,0 +1,11 @@
+output_dir: a_string  # type "string"
+normalize_by_read_set: true  # default value of type "boolean".
+no_normalize_reads: false  # type "boolean"
+trinity_cpu: 8  # default value of type "int".
+trinity_ss_lib_type: a_string  # type "string"
+single_reads:  # type "File"
+    class: File
+    path: a/file/path
+trinity_max_mem: 80G  # default value of type "string".
+trimmomatic: true  # default value of type "boolean".
+trinity_seq_type: fq  # default value of type "string".

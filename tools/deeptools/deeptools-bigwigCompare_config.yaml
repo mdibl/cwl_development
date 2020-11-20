@@ -1,0 +1,17 @@
+version: false  # type "boolean" (optional)
+verbose: false  # type "boolean" (optional)
+scaleFactors: 0.1  # type "float" (optional)
+region: a_string  # type "string" (optional)
+pseudocount: 0  # type "int" (optional)
+output_suffix: a_string  # type "string" (optional)
+outFileName: a_string  # type "string" (optional)
+outFileFormat: a_string  # type "string" (optional)
+operation: a_string  # type "string" (optional)
+numberOfProcessors: 0  # type "int" (optional)
+binSize: 0  # type "int" (optional)
+bigwig2:  # type "File"
+    class: File
+    path: a/file/path
+bigwig1:  # type "File"
+    class: File
+    path: a/file/path

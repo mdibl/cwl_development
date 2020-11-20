@@ -1,9 +1,0 @@
-gtf:
-  class: File
-  path: "/compbio/reference/ensembl/release-100/danio_rerio/gtf/Danio_rerio.GRCz11.100.gtf"
-
-reference_fasta_file:
-  class: File
-  path: "/compbio/reference/ensembl/release-100/danio_rerio/genome/danio_rerio.genome.fa"
-
-reference_name: "danio_rerio-rsem_index"
