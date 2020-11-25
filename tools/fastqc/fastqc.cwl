@@ -7,7 +7,7 @@ doc: >
      be aware before doing any further analysis. Documenation can be found here: http://www.bioinformatics.babraham.ac.uk/projects/fastqc/"
 
 hints:
-  - class: DockerRequirement:
+  - class: DockerRequirement
     dockerImageId: fastqc:0.11.9
     dockerPull: biocontainers/fastqc:v0.11.9_cv6
 
