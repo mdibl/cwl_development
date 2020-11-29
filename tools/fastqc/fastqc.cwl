@@ -8,8 +8,8 @@ doc: >
 
 hints:
   - class: DockerRequirement
-    dockerImageId: fastqc:0.11.9
-    dockerPull: biocontainers/fastqc:v0.11.9_cv6
+    #dockerImageId: fastqc:0.11.9
+    dockerPull: biocontainers/fastqc:v0.11.9_cv7
 
 requirements:
   - class: InlineJavascriptRequirement
