@@ -7,6 +7,9 @@ hints:
   DockerRequirement:
     dockerPull: quay.io/biocontainers/rsem:1.3.0--boost1.64_3
 
+requirements:
+  - class: InlineJavascriptRequirement
+
 baseCommand: [rsem-calculate-expression, --star, --keep-intermediate-files, --no-bam-output, --paired-end]
 
 arguments:
