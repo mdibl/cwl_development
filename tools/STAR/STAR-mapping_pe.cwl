@@ -5,7 +5,7 @@ doc: "STAR: Spliced Transcripts Alignment to a Reference. https://github.com/ale
 
 hints:
   DockerRequirement:
-    dockerImageId: star:2.7.5
+    #dockerImageId: star:2.7.5
     dockerPull: quay.io/biocontainers/star:2.7.5c--0
 
 requirements:
