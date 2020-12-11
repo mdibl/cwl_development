@@ -40,11 +40,11 @@ outputs:
       type: array
       items: File
     outputBinding:
-      glob: "*"
-  console_log:
-    type: stdout
-  error_log:
-    type: stderr
+      glob: $(inputs.reference_name + "*")
+  #console_log:
+    #type: stdout
+  #error_log:
+    #type: stderr
 
-stdout: rsem-index_console.txt
-stderr: rsem-index_error.txt
+#stdout: rsem-index_console.txt
+#stderr: rsem-index_error.txt
