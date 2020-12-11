@@ -26,7 +26,7 @@ inputs:
   reference_fasta_file:
     label: "A path to directory contains reference fasta files"
     doc: "Either a comma-separated list of Multi-FASTA formatted files OR a directory name. If a directory name is specified, RSEM will read all files with suffix '.fa' or '.fasta' in this directory. The files should contain either the sequences of transcripts or an entire genome, depending on whether the '--gtf' option is used."
-    type: File
+    type: File[]
     inputBinding:
       position: 1
   reference_name:
