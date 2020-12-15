@@ -3,6 +3,7 @@ rsem_index_prefix: a_string  # type "string"
 rsem_index_dir:  # type "Directory"
     class: Directory
     path: a/directory/path
+paired-end: true  # default value of type "boolean".
 nthreads: 0  # type "int"
 input_fastq_rv:  # type "File"
     class: File

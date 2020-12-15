@@ -10,7 +10,7 @@ hints:
 requirements:
   - class: InlineJavascriptRequirement
 
-baseCommand: [rsem-calculate-expression, --keep-intermediate-files, --no-bam-output, --paired-end]
+baseCommand: [rsem-calculate-expression]
 
 arguments:
   - valueFrom: $(inputs.rsem_index_dir.path)/$(inputs.rsem_index_prefix)
@@ -24,6 +24,12 @@ inputs:
     inputBinding:
       prefix: --num-threads
       position: 0
+  paired-end:
+      type: boolean
+      default: true
+      inputBinding:
+        position: 1
+        prefix: --paired-end
   input_fastq_fw:
     label: "Upstream reads for paired-end data"
     doc: "Upstream reads for paired-end data. By default, these files are assumed to be in FASTQ format."
@@ -52,22 +58,21 @@ inputs:
       position: 4
 
 outputs:
-  genes_result:
+  genes:
     type: File
     outputBinding:
-      glob: "*.genes.results"
-  isoforms_result:
+      glob: $(inputs.rsem_output_prefix + ".genes.results")
+  isoforms:
     type: File
     outputBinding:
-      glob: "*.isoforms.results"
+      glob: $(inputs.rsem_output_prefix + ".isoforms.results")
   stat:
-    type: Directory
+    type:
+      - 'null'
+      - {type: array, items: File}
     outputBinding:
-      glob: "*.stat"
-  star_output:
-    type: Directory
-    outputBinding:
-      glob: "*.temp"
+      glob: $(inputs.sample_name + ".stat/*")
+
   console_log:
     type: stdout  
   error_log:
