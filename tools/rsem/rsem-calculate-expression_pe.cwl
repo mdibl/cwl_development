@@ -23,12 +23,12 @@ inputs:
     type: int
     inputBinding:
       prefix: --num-threads
-      position: 0
+      position: 4
   paired-end:
       type: boolean
       default: true
       inputBinding:
-        position: 1
+        position: 0
         prefix: --paired-end
   input_fastq_fw:
     label: "Upstream reads for paired-end data"
@@ -54,8 +54,6 @@ inputs:
     label: "The name of the sample analyzed"
     doc: "The name of the sample analyzed. All output files are prefixed by this name (e.g., sample_name.genes.results)"
     type: string
-    inputBinding:
-      position: 4
 
 outputs:
   genes:
