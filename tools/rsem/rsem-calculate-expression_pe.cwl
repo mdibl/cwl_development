@@ -14,7 +14,7 @@ baseCommand: [rsem-calculate-expression]
 
 arguments:
   - valueFrom: $(inputs.rsem_index_dir.path)/$(inputs.rsem_index_prefix)
-    position: 3
+    position: 4
 
 inputs:
   nthreads:
@@ -23,25 +23,25 @@ inputs:
     type: int
     inputBinding:
       prefix: --num-threads
-      position: 4
+      position: 0
   paired-end:
       type: boolean
       default: true
       inputBinding:
-        position: 0
+        position: 1
         prefix: --paired-end
   input_fastq_fw:
     label: "Upstream reads for paired-end data"
     doc: "Upstream reads for paired-end data. By default, these files are assumed to be in FASTQ format."
     type: File
     inputBinding:
-      position: 1
+      position: 2
   input_fastq_rv:
     label: "Downstream reads for paired-end data"
     doc: "Downstream reads for paired-end data. By default, these files are assumed to be in FASTQ format."
     type: File
     inputBinding:
-      position: 2
+      position: 3
   rsem_index_dir:
     label: "A path to the directory contains RSEM index files"
     doc: "A path to the directory contains RSEM index files"
