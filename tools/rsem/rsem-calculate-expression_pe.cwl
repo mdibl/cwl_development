@@ -10,7 +10,7 @@ hints:
 requirements:
   - class: InlineJavascriptRequirement
 
-baseCommand: [rsem-calculate-expression, --no-bam-output]
+baseCommand: [rsem-calculate-expression]
 
 inputs:
   nthreads:
@@ -19,7 +19,7 @@ inputs:
     type: int
     inputBinding:
       prefix: --num-threads
-      position: 6
+      position: 5
   paired-end:
     type: boolean
     default: true
@@ -38,18 +38,12 @@ inputs:
     type: File
     inputBinding:
       position: 2
-  bam:
-    label: "BAM formatted input file"
-    type: File
-    inputBinding:
-      position: 3
-      prefix: --bam
   reference_prefix:
     label: "The name of RSEM index files"
     doc: "The name of RSEM index files"
     type: string
     inputBinding:
-      position: 4
+      position: 3
       valueFrom: $(inputs.reference_files.path + "/" + self)
   reference_files:
     label: "Directory containing <reference_name>.seq, etc"
@@ -59,7 +53,7 @@ inputs:
     doc: "The name of the sample analyzed. All output files are prefixed by this name (e.g., sample_name.genes.results)"
     type: string
     inputBinding:
-      position: 5
+      position: 4
 
 outputs:
   genes:
