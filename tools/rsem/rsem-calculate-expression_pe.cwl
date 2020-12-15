@@ -56,7 +56,7 @@ inputs:
       position: 4
   star_path:
     label: "Path to local installation of STAR"
-    type: Directory
+    type: File
     inputBinding:
       position: 5
 
