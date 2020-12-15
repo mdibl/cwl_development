@@ -62,7 +62,7 @@ inputs:
       prefix: --star
   star_path:
     label: "Path to local installation of STAR"
-    type: File
+    type: Directory
     inputBinding:
       position: 6
 
