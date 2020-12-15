@@ -44,7 +44,7 @@ inputs:
     type: string
     inputBinding:
       position: 3
-      valueFrom: $(inputs.reference_files.path + "/" + self)
+      valueFrom: $(inputs.reference_files + "/" + self)
   reference_files:
     label: "Directory containing <reference_name>.seq, etc"
     type: Directory
