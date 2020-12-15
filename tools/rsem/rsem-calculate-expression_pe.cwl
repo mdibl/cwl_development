@@ -10,7 +10,7 @@ hints:
 requirements:
   - class: InlineJavascriptRequirement
 
-baseCommand: [rsem-calculate-expression, --star]
+baseCommand: [rsem-calculate-expression]
 
 inputs:
   nthreads:
@@ -19,7 +19,7 @@ inputs:
     type: int
     inputBinding:
       prefix: --num-threads
-      position: 6
+      position: 7
   paired-end:
     type: boolean
     default: true
@@ -54,11 +54,17 @@ inputs:
     type: string
     inputBinding:
       position: 4
+  star:
+    label: "Use STAR as aligner"
+    type: boolean
+    inputBinding:
+      position: 5
+      prefix: --star
   star_path:
     label: "Path to local installation of STAR"
     type: File
     inputBinding:
-      position: 5
+      position: 6
 
 outputs:
   genes:
