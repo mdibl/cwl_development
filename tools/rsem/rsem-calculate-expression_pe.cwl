@@ -19,7 +19,7 @@ inputs:
     type: int
     inputBinding:
       prefix: --num-threads
-      position: 5
+      position: 6
   paired-end:
     type: boolean
     default: true
@@ -54,6 +54,11 @@ inputs:
     type: string
     inputBinding:
       position: 4
+  star_path:
+    label: "Path to local installation of STAR"
+    type: Directory
+    inputBinding:
+      position: 5
 
 outputs:
   genes:
