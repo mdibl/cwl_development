@@ -12,10 +12,6 @@ requirements:
 
 baseCommand: [rsem-calculate-expression, --no-bam-output]
 
-arguments:
-  - valueFrom: $(inputs.rsem_index_dir.path)/$(inputs.rsem_index_prefix)
-    position: 4
-
 inputs:
   nthreads:
     label: "Number of threads to use"
@@ -48,14 +44,16 @@ inputs:
     inputBinding:
       position: 3
       prefix: --bam
-  rsem_index_dir:
-    label: "A path to the directory contains RSEM index files"
-    doc: "A path to the directory contains RSEM index files"
-    type: Directory
-  rsem_index_prefix:
+  reference_prefix:
     label: "The name of RSEM index files"
     doc: "The name of RSEM index files"
     type: string
+    inputBinding:
+      position: 4
+      valueFrom: $(inputs.reference_files.path + "/" + self)
+  reference_files:
+    label: "Directory containing <reference_name>.seq, etc"
+    type: Directory
   rsem_output_prefix:
     label: "The name of the sample analyzed"
     doc: "The name of the sample analyzed. All output files are prefixed by this name (e.g., sample_name.genes.results)"
