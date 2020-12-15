@@ -71,10 +71,10 @@ outputs:
     outputBinding:
       glob: $(inputs.sample_name + ".stat/*")
 
-  console_log:
-    type: stdout  
-  error_log:
-    type: stderr
+  #console_log:
+    #type: stdout  
+  #error_log:
+    #type: stderr
 
-stdout: $(inputs.rsem_output_prefix.basename + "_rsem-calc-exp_pe_console.txt")
-stderr: $(inputs.rsem_output_prefix.basename + "_rsem-calc-exp_pe_error.txt")
+#stdout: $(inputs.rsem_output_prefix.basename + "_rsem-calc-exp_pe_console.txt")
+#stderr: $(inputs.rsem_output_prefix.basename + "_rsem-calc-exp_pe_error.txt")
