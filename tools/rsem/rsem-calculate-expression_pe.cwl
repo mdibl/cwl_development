@@ -60,11 +60,12 @@ inputs:
     inputBinding:
       position: 5
       prefix: --star
-  star_path:
+  star-path:
     label: "Path to local installation of STAR"
     type: Directory
     inputBinding:
       position: 6
+      prefix: --star-path
 
 outputs:
   genes:
