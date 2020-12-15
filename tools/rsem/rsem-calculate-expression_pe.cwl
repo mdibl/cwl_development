@@ -10,7 +10,7 @@ hints:
 requirements:
   - class: InlineJavascriptRequirement
 
-baseCommand: [rsem-calculate-expression, --star, --keep-intermediate-files, --no-bam-output, --paired-end]
+baseCommand: [rsem-calculate-expression, --keep-intermediate-files, --no-bam-output, --paired-end]
 
 arguments:
   - valueFrom: $(inputs.rsem_index_dir.path)/$(inputs.rsem_index_prefix)
