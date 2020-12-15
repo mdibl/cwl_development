@@ -11,3 +11,6 @@ input_fastq_rv:  # type "File"
 input_fastq_fw:  # type "File"
     class: File
     path: a/file/path
+bam:  # type "File"
+    class: File
+    path: a/file/path
