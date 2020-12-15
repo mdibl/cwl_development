@@ -10,7 +10,7 @@ hints:
 requirements:
   - class: InlineJavascriptRequirement
 
-baseCommand: [rsem-calculate-expression]
+baseCommand: [rsem-calculate-expression, --star]
 
 inputs:
   nthreads:
