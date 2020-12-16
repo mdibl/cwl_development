@@ -1,0 +1,10 @@
+nthreads: 0  # type "int"
+genomeDir:  # type "Directory"
+    class: Directory
+    path: a/directory/path
+seqfile:  # type "File"
+    class: File
+    path: a/file/path
+seqfile_1:  # type "File"
+    class: File
+    path: a/file/path

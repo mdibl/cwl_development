@@ -11,4 +11,4 @@ Junctions:  # type "File" (optional)
     path: a/file/path
 IndexName: a_string  # type "string"
 GenomeSize: 0  # type "int" (optional)
-GenomeBits: 0  # type "int" (optional)
+GenomeBits: 18  # default value of type "int". (optional)

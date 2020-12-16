@@ -1,12 +1,16 @@
 rsem_output_prefix: a_string  # type "string"
-rsem_index_prefix: a_string  # type "string"
-rsem_index_dir:  # type "Directory"
+reference_prefix: a_string  # type "string"
+reference_files:  # type "Directory"
     class: Directory
     path: a/directory/path
+paired-end: true  # default value of type "boolean".
 nthreads: 0  # type "int"
 input_fastq_rv:  # type "File"
     class: File
     path: a/file/path
 input_fastq_fw:  # type "File"
+    class: File
+    path: a/file/path
+bam:  # type "File"
     class: File
     path: a/file/path

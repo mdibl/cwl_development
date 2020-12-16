@@ -1,0 +1,22 @@
+transcript-to-gene-map:  # type "File" (optional)
+    class: File
+    path: a/file/path
+star: false  # type "boolean" (optional)
+reference_name: a_string  # type "string"
+reference_fasta_files:  # array of type "File"
+  - class: File
+    path: a/file/path
+quiet: false  # type "boolean" (optional)
+polyA-length: 0  # type "int" (optional)
+polyA: false  # type "boolean" (optional)
+no-polyA-subset: false  # type "boolean" (optional)
+gtf:  # type "File" (optional)
+    class: File
+    path: a/file/path
+bowtie2-path: false  # type "boolean" (optional)
+bowtie2: false  # type "boolean" (optional)
+bowtie-path: false  # type "boolean" (optional)
+bowtie: false  # type "boolean" (optional)
+allele-to-gene-map:  # type "File" (optional)
+    class: File
+    path: a/file/path

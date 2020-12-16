@@ -7,6 +7,9 @@ hints:
   DockerRequirement:
     dockerPull: quay.io/biocontainers/rsem:1.3.0--boost1.64_3
 
+requirements:
+  - class: InlineJavascriptRequirement
+
 baseCommand: [rsem-prepare-reference]
 
 arguments:
@@ -20,10 +23,10 @@ inputs:
     type: File
     inputBinding:
       prefix: --gtf
-  reference_fasta_file:
+  reference_fasta_files:
     label: "A path to directory contains reference fasta files"
     doc: "Either a comma-separated list of Multi-FASTA formatted files OR a directory name. If a directory name is specified, RSEM will read all files with suffix '.fa' or '.fasta' in this directory. The files should contain either the sequences of transcripts or an entire genome, depending on whether the '--gtf' option is used."
-    type: File
+    type: Directory
     inputBinding:
       position: 1
   reference_name:
@@ -37,11 +40,11 @@ outputs:
       type: array
       items: File
     outputBinding:
-      glob: "*"
-  console_log:
-    type: stdout
-  error_log:
-    type: stderr
+      glob: $(inputs.reference_name + "*")
+  #console_log:
+    #type: stdout
+  #error_log:
+    #type: stderr
 
-stdout: rsem-index_console.txt
-stderr: rsem-index_error.txt
+#stdout: rsem-index_console.txt
+#stderr: rsem-index_error.txt

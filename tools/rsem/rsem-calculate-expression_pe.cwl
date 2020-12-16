@@ -5,13 +5,12 @@ doc: "RSEM is a software package for estimating gene and isoform expression leve
 
 hints:
   DockerRequirement:
-    dockerPull: quay.io/biocontainers/rsem:1.3.0--boost1.64_3
+    dockerPull: reddylab/rsem:1.2.25
 
-baseCommand: [rsem-calculate-expression, --star, --keep-intermediate-files, --no-bam-output, --paired-end]
+requirements:
+  - class: InlineJavascriptRequirement
 
-arguments:
-  - valueFrom: $(inputs.rsem_index_dir.path)/$(inputs.rsem_index_prefix)
-    position: 3
+baseCommand: [rsem-calculate-expression]
 
 inputs:
   nthreads:
@@ -20,7 +19,13 @@ inputs:
     type: int
     inputBinding:
       prefix: --num-threads
+      position: 7
+  paired-end:
+    type: boolean
+    default: true
+    inputBinding:
       position: 0
+      prefix: --paired-end
   input_fastq_fw:
     label: "Upstream reads for paired-end data"
     doc: "Upstream reads for paired-end data. By default, these files are assumed to be in FASTQ format."
@@ -33,42 +38,55 @@ inputs:
     type: File
     inputBinding:
       position: 2
-  rsem_index_dir:
-    label: "A path to the directory contains RSEM index files"
-    doc: "A path to the directory contains RSEM index files"
-    type: Directory
-  rsem_index_prefix:
+  reference_prefix:
     label: "The name of RSEM index files"
     doc: "The name of RSEM index files"
     type: string
+    inputBinding:
+      position: 3
+      valueFrom: $(inputs.reference_files + "/" + self)
+  reference_files:
+    label: "Directory containing <reference_name>.seq, etc"
+    type: Directory
   rsem_output_prefix:
     label: "The name of the sample analyzed"
     doc: "The name of the sample analyzed. All output files are prefixed by this name (e.g., sample_name.genes.results)"
     type: string
     inputBinding:
       position: 4
+  #star:
+    #label: "Use STAR as aligner"
+    #type: boolean
+    #inputBinding:
+      #position: 5
+      #prefix: --star
+  #star-path:
+    #label: "Path to local installation of STAR"
+    #type: Directory
+    #inputBinding:
+      #position: 6
+      #prefix: --star-path
 
 outputs:
-  genes_result:
+  genes:
     type: File
     outputBinding:
-      glob: "*.genes.results"
-  isoforms_result:
+      glob: $(inputs.rsem_output_prefix + ".genes.results")
+  isoforms:
     type: File
     outputBinding:
-      glob: "*.isoforms.results"
+      glob: $(inputs.rsem_output_prefix + ".isoforms.results")
   stat:
-    type: Directory
+    type:
+      - 'null'
+      - {type: array, items: File}
     outputBinding:
-      glob: "*.stat"
-  star_output:
-    type: Directory
-    outputBinding:
-      glob: "*.temp"
-  console_log:
-    type: stdout  
-  error_log:
-    type: stderr
+      glob: $(inputs.sample_name + ".stat/*")
 
-stdout: $(inputs.rsem_output_prefix.basename + "_rsem-calc-exp_pe_console.txt")
-stderr: $(inputs.rsem_output_prefix.basename + "_rsem-calc-exp_pe_error.txt")
+  #console_log:
+    #type: stdout  
+  #error_log:
+    #type: stderr
+
+#stdout: $(inputs.rsem_output_prefix.basename + "_rsem-calc-exp_pe_console.txt")
+#stderr: $(inputs.rsem_output_prefix.basename + "_rsem-calc-exp_pe_error.txt")

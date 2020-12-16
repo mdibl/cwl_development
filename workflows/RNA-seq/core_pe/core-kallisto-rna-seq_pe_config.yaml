@@ -1,0 +1,9 @@
+index_file:  # type "File"
+    class: File
+    path: a/file/path
+seqfile:  # type "File"
+    class: File
+    path: a/file/path
+seqfile_1:  # type "File"
+    class: File
+    path: a/file/path
