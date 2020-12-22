@@ -5,7 +5,7 @@ doc: "RSEM is a software package for estimating gene and isoform expression leve
 
 hints:
   DockerRequirement:
-    dockerPull: quay.io/biocontainers/rsem:1.3.0--boost1.64_3
+    dockerPull: reddylab/rsem:1.2.25
 
 requirements:
   - class: InlineJavascriptRequirement
@@ -26,7 +26,7 @@ inputs:
   reference_fasta_files:
     label: "A path to directory contains reference fasta files"
     doc: "Either a comma-separated list of Multi-FASTA formatted files OR a directory name. If a directory name is specified, RSEM will read all files with suffix '.fa' or '.fasta' in this directory. The files should contain either the sequences of transcripts or an entire genome, depending on whether the '--gtf' option is used."
-    type: Directory
+    type: File
     inputBinding:
       position: 1
   reference_name:
