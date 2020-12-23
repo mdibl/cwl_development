@@ -1,3 +1,6 @@
+star-path:  # type "Directory"
+    class: Directory
+    path: a/directory/path
 star: false  # type "boolean" (optional)
 reference_name: a_string  # type "string"
 reference_fasta_files:  # type "File"

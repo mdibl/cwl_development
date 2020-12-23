@@ -28,7 +28,7 @@ inputs:
     doc: "Either a comma-separated list of Multi-FASTA formatted files OR a directory name. If a directory name is specified, RSEM will read all files with suffix '.fa' or '.fasta' in this directory. The files should contain either the sequences of transcripts or an entire genome, depending on whether the '--gtf' option is used."
     type: File
     inputBinding:
-      position: 1
+      position: 2
   reference_name:
     label: "The name of the reference used"
     doc: "The name of the reference used. RSEM will generate several reference-related files that are prefixed by this name. This name can contain path information (e.g. '/ref/mm9')."
@@ -38,8 +38,14 @@ inputs:
     type: boolean?
     default: false
     inputBinding:
-      position: 1
+      position: 0
       prefix: --star
+  star-path:
+    label: "Path to local installation of STAR"
+    type: Directory
+    inputBinding:
+      position: 1
+      prefix: --star-path
 
 outputs:
   rsem_index:
