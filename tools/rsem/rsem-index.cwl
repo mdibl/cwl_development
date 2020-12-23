@@ -33,6 +33,13 @@ inputs:
     label: "The name of the reference used"
     doc: "The name of the reference used. RSEM will generate several reference-related files that are prefixed by this name. This name can contain path information (e.g. '/ref/mm9')."
     type: string
+  star:
+    label: "build STAR indices"
+    type: boolean?
+    default: false
+    inputBinding:
+      position: 1
+      prefix: --star
 
 outputs:
   rsem_index:

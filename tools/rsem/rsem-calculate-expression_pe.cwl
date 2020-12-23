@@ -54,18 +54,18 @@ inputs:
     type: string
     inputBinding:
       position: 4
-  #star:
-    #label: "Use STAR as aligner"
-    #type: boolean
-    #inputBinding:
-      #position: 5
-      #prefix: --star
-  #star-path:
-    #label: "Path to local installation of STAR"
-    #type: Directory
-    #inputBinding:
-      #position: 6
-      #prefix: --star-path
+  star:
+    label: "Use STAR as aligner"
+    type: boolean
+    inputBinding:
+      position: 5
+      prefix: --star
+  star-path:
+    label: "Path to local installation of STAR"
+    type: Directory
+    inputBinding:
+      position: 6
+      prefix: --star-path
 
 outputs:
   genes:
