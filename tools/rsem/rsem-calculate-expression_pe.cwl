@@ -5,7 +5,7 @@ doc: "RSEM is a software package for estimating gene and isoform expression leve
 
 hints:
   DockerRequirement:
-    dockerPull: quay.io/biocontainers/star:2.7.5b--0
+    dockerPull: reddylab/rsem:1.2.250
 
 requirements:
   - class: InlineJavascriptRequirement
