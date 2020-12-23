@@ -60,14 +60,24 @@ inputs:
     inputBinding:
       position: 5
       prefix: --star
-  star-path:
+  star_path:
     label: "Path to local installation of STAR"
     type: Directory
     inputBinding:
       position: 6
       prefix: --star-path
+  output_star_genome_bam:
+    label: "Save BAM file from STAR alignment"
+    type: boolean
+    inputBinding:
+      position: 0
+      prefix: --output-star-genome-bam
 
 outputs:
+  star_genome_bam:
+    type: File
+    outputBinding:
+      glob: $(inputs.rsem_output_prefix + ".STAR.genome.bam")
   genes:
     type: File
     outputBinding:

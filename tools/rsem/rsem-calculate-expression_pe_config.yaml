@@ -1,4 +1,4 @@
-star-path:  # type "Directory"
+star_path:  # type "Directory"
     class: Directory
     path: a/directory/path
 star: false  # type "boolean"
@@ -8,6 +8,7 @@ reference_files:  # type "Directory"
     class: Directory
     path: a/directory/path
 paired-end: true  # default value of type "boolean".
+output_star_genome_bam: false  # type "boolean"
 nthreads: 0  # type "int"
 input_fastq_rv:  # type "File"
     class: File
