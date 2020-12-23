@@ -66,12 +66,12 @@ inputs:
     inputBinding:
       position: 6
       prefix: --star-path
-  output_star_genome_bam:
-    label: "Save BAM file from STAR alignment"
-    type: boolean
-    inputBinding:
-      position: 0
-      prefix: --output-star-genome-bam
+  #output_star_genome_bam:
+    #label: "Save BAM file from STAR alignment"
+    #type: boolean
+    #inputBinding:
+      #position: 0
+      #prefix: --output-star-genome-bam
 
 outputs:
   star_genome_bam:
