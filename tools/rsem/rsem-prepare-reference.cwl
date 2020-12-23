@@ -53,12 +53,6 @@ inputs:
     inputBinding:
       position: 1
       prefix: --star-path
-  IndexName:
-    label: "Name of index"
-    type: string
-    inputBinding:
-      prefix: --genomeDir
-      valueFrom: ./$(self)
 
 outputs:
   rsem_index:
@@ -70,7 +64,7 @@ outputs:
   starIndex:
     type: Directory
     outputBinding:
-      glob: ./$(inputs.IndexName)/
+      glob: ./ref/
   #console_log:
     #type: stdout
   #error_log:
